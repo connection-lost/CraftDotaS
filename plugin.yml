@@ -1,0 +1,11 @@
+name: CraftDotaS
+main: me.crafter.mc.craftdotas.CraftDotaS
+author: connection_lost
+version: 1.0
+description: >
+             0w0
+commands:
+   dota:
+      permission: dota.admin
+      usage: |
+         /dota

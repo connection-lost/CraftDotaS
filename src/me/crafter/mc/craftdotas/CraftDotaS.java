@@ -4,6 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.crafter.mc.craftdotas.listener.InventoryListener;
+
 public class CraftDotaS extends JavaPlugin {
 
 

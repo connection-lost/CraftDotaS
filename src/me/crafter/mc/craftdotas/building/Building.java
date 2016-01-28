@@ -22,8 +22,7 @@ public class Building {
 	private boolean invulnerable;
 	// What building will become attackble if this building falls
 	private int[] unlocks;
-	
-	
+		
 	public int getSide() {return side;}
 	public int getId() {return id;}
 	public double getHealth() {return health;}
@@ -40,6 +39,10 @@ public class Building {
 		health = Math.max(0, health - damage);
 		if (health < 0.01) return true;
 		else return false;
+	}
+	
+	public void tick(){
+		// Base building class does nothing
 	}
 
 }

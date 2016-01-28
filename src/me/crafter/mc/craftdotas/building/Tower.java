@@ -10,14 +10,11 @@ public class Tower extends Building{
 	private int attackspeed;
 	// Building remaining attack interval
 	private int attackcooldown;
-	
-	
-	
+		
 	public double getDamage() {return damage;}
 	public AttackMove getAttackMove() {return attackmove;}
 	public int getAttackSpeed() {return attackspeed;}
 	public int getAttackCooldown() {return attackcooldown;}
-	
 
 	public void setAttackCooldown(int newattackcooldown) {attackcooldown = newattackcooldown;}
 	
@@ -29,6 +26,12 @@ public class Tower extends Building{
 			attackcooldown -= 1;
 			return false;
 		}
+	}
+	
+	@Override
+	public void tick(){
+		super.tick();
+		// TODO check and attack
 	}
 
 }

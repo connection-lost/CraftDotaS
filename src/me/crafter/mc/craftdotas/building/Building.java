@@ -14,12 +14,6 @@ public class Building {
 	private double maxhealth;
 	// Regeneration of building per tick
 	private double healthregen;
-	// Building dealing damage
-	private double damage;
-	// Building attack speed in ticks
-	private int attackspeed;
-	// Building remaining attack interval
-	private int attackcooldown;
 	// Building display name
 	private String displayName;
 	// Building min & max locations
@@ -30,44 +24,22 @@ public class Building {
 	private int[] unlocks;
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public int getSide() {return side;}
 	public int getId() {return id;}
 	public double getHealth() {return health;}
 	public double getMaxHealth() {return maxhealth;}
 	public double getHealthRegen() {return healthregen;}
-	public double getdamage() {return damage;}
-	public int getAttackSpeed() {return attackspeed;}
-	public int getAttackCooldown() {return attackcooldown;}
 	public String getDisplayName() {return displayName;}
 	public Location[] getLocations() {return locations;}
 	public boolean isInvulnerable() {return invulnerable;}
 	public int[] getUnlocks() {return unlocks;}
 
 	public void setHealth(double newhealth) {health = newhealth;}
-	public void setAttackCooldown(int newattackcooldown) {attackcooldown = newattackcooldown;}
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
 	public boolean damage(double damage){
 		health = Math.max(0, health - damage);
 		if (health < 0.01) return true;
 		else return false;
 	}
-	public boolean tickAttackCooldown(){
-		if (attackcooldown == 0){
-			attackcooldown = attackspeed - 1;
-			return true;
-		} else {
-			attackcooldown -= 1;
-			return false;
-		}
-	}
+
 }

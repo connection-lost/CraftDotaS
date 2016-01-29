@@ -14,6 +14,8 @@ public class Building {
 	private double maxhealth;
 	// Regeneration of building per tick
 	private double healthregen;
+	// Whether this building is destroyed
+	private boolean destroyed;
 	// Building display name
 	private String displayName;
 	// Building min & max locations
@@ -28,16 +30,22 @@ public class Building {
 	public double getHealth() {return health;}
 	public double getMaxHealth() {return maxhealth;}
 	public double getHealthRegen() {return healthregen;}
+	public boolean isDestroyed() {return destroyed;}
 	public String getDisplayName() {return displayName;}
 	public Location[] getLocations() {return locations;}
 	public boolean isInvulnerable() {return invulnerable;}
 	public int[] getUnlocks() {return unlocks;}
 
 	public void setHealth(double newhealth) {health = newhealth;}
+	public void setDestroyed(boolean newdestroyed) {destroyed = newdestroyed;}
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
+	
 	public boolean damage(double damage){
 		health = Math.max(0, health - damage);
-		if (health < 0.01) return true;
+		if (health < 0.01){
+			destroyed = true;
+			return true;
+		}
 		else return false;
 	}
 	

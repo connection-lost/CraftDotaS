@@ -1,8 +1,8 @@
 package me.crafter.mc.craftdotas.task;
 
-import me.crafter.mc.craftdotas.data.GameFlow;
-import me.crafter.mc.craftdotas.data.GameInfo;
-import me.crafter.mc.craftdotas.data.HudAction;
+import me.crafter.mc.craftdotas.action.GameFlow;
+import me.crafter.mc.craftdotas.action.GameInfo;
+import me.crafter.mc.craftdotas.action.HudAction;
 
 public class GameTick implements Runnable{
 

@@ -1,4 +1,4 @@
-package me.crafter.mc.craftdotas.data;
+package me.crafter.mc.craftdotas.action;
 
 import java.util.Map;
 

@@ -4,7 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import me.crafter.mc.craftdotas.data.GameInfo;
+import me.crafter.mc.craftdotas.action.GameInfo;
 
 public class InventoryListener implements Listener {
 	

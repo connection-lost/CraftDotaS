@@ -1,6 +1,6 @@
 package me.crafter.mc.craftdotas.data;
 
-public enum GameAction {
+public enum GameAction { // NOT USED
 
 	SYSTEM_ANNOUNCE, // Say message
 	SYSTEM_COMMAND, // Run command

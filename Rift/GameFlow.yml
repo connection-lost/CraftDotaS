@@ -1,0 +1,33 @@
+Start: -1800
+End: 60000
+Flow:
+ - tick: -1800
+   action: "SYSTEM_ANNOUNCE"
+   content: "Game is getting ready to start!"
+ - tick: -1701
+   action: "BATTLEFIELD_GATE_CLOSE"
+   content: ""
+ - tick: -1700
+   action: "BATTLEFIELD_PLAYER_READY"
+   content: ""
+ - tick: -1500
+   action: "BATTLEFIELD_GATE_OPEN"
+   content: ""
+ - tick: -1200
+   action: "SYSTEM_ANNOUNCE"
+   content: "&a[CraftDotaS] &bWelcome to the Rift!"
+ - tick: -600
+   action: "SYSTEM_ANNOUNCE"
+   content: "&a[CraftDotaS] &bThirty seconds to battle!"
+ - tick: -1
+   action: "SYSTEM_ANNOUNCE"
+   content: "&a[CraftDotaS] &bThe battle begins!"
+ - tick: 53999
+   action: "SYSTEM_END"
+   content: ""
+ - tick: 54000
+   action: "SYSTEM_ANNOUNCE"
+   content: "&a[CraftDotaS] &bTime's up! Game over!"
+ - tick: 55200
+   action: "SYSTEM_STOP"
+   content: ""

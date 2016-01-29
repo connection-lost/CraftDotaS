@@ -4,7 +4,7 @@ import org.bukkit.Location;
 
 public class Building {
 
-	// Which side is the building at. Default 0 = radiant, 1 = dire
+	// Which side is the building at. Default 0 = neutral, 1 = radiant, 2 = dire
 	private int side;
 	// Building specific id in tower file
 	private int id;

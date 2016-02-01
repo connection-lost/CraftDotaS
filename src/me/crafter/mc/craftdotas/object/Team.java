@@ -16,7 +16,7 @@ public class Team {
 	private String suffix;
 	private Location spawnlocation;
 	
-	private static Map<Player, Integer> playerteams = new HashMap<Player, Integer>();
+	private static Map<Player, Team> playerteams = new HashMap<Player, Team>();
 	private static Map<Integer, Team> teams = new HashMap<Integer, Team>();
 	
 	public Team(int id_, String displayname_, String prefix_, String suffix_, Location spawnlocation_){
@@ -38,12 +38,22 @@ public class Team {
 		return teams.get(id);
 	}
 	
-	public static int getPlayerTeam(Player player) {return playerteams.get(player);}
+	public static Team getPlayerTeam(Player player) {return playerteams.get(player);}
 	
-	public static List<Player> getMembers(int teamid){
+	public static List<Player> getMembersByTeamId(int teamid){
 		List<Player> members = new ArrayList<Player>();
 		for (Player player : playerteams.keySet()){
-			if (playerteams.get(player) == teamid) {
+			if (playerteams.get(player).getId() == teamid) {
+				members.add(player);
+			}
+		}
+		return members;
+	}
+	
+	public static List<Player> getMembersByTeam(Team team){
+		List<Player> members = new ArrayList<Player>();
+		for (Player player : playerteams.keySet()){
+			if (playerteams.get(player) == team) {
 				members.add(player);
 			}
 		}

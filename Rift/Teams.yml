@@ -1,0 +1,18 @@
+Teams:
+ - id: -1
+   displayname: "观众"
+   prefix: "&7[观众] "
+   suffix: "&r"
+   default: true
+ - id: 0
+   displayname: "野怪"
+   prefix: "&f[野怪] "
+   suffix: "&r"
+ - id: 1
+   displayname: "天辉"
+   prefix: "&b[天辉] "
+   suffix: "&r"
+ - id: 2
+   displayname: "夜魇"
+   prefix: "&c[夜魇] "
+   suffix: "&r"

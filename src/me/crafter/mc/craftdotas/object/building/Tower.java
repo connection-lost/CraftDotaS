@@ -1,7 +1,19 @@
 package me.crafter.mc.craftdotas.object.building;
 
+import org.bukkit.Location;
+
 public class Tower extends Building{
 	
+	public Tower(int side_, int id_, double health_, double maxhealth_, double healthregen_, boolean destroyed_,
+			String displayname_, Location[] locations_, boolean invulnerable_, int[] unlocks_, int damagescore_, int destroyscore_,
+			AttackMove attackmove_, double damage_, int attackspeed_) {
+		super(side_, id_, health_, maxhealth_, healthregen_, destroyed_, displayname_, locations_, invulnerable_, unlocks_, damagescore_, destroyscore_);
+		attackmove = attackmove_;
+		damage = damage_;
+		attackspeed = attackspeed_;
+		attackcooldown = 0;
+	}
+
 	// Building attack method
 	private AttackMove attackmove;
 	// Building dealing damage

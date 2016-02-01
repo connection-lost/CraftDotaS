@@ -3,6 +3,12 @@ package me.crafter.mc.craftdotas.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+
+import me.crafter.mc.craftdotas.object.Team;
+import net.md_5.bungee.api.ChatColor;
+
 public class GameFlow {
 
 	private static Map<Integer, String[]> gameflows;
@@ -21,10 +27,20 @@ public class GameFlow {
 		if (flow != null){
 			switch (flow[0]){
 			case "SYSTEM_ANNOUNCE": // Say message
+				String message = ChatColor.translateAlternateColorCodes('&', flow[1]);
+				Bukkit.broadcastMessage(message);
 				break;
 			case "SYSTEM_COMMAND": // Run command
+				String command = flow[1];
+				if (command.startsWith("/")){
+					command = command.replaceFirst("/", "");
+				}
+				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
 				break;
 			case "BATTLEFIELD_PLAYER_READY": // Teleport players to battlefield
+				for (Player player : GameInfo.getWorld().getPlayers()){
+					player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
+				}
 				break;
 			case "BATTLEFIELD_GATE_OPEN": // Open player base gate
 				break;

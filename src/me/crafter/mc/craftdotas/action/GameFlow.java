@@ -6,6 +6,7 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import net.md_5.bungee.api.ChatColor;
 
@@ -38,7 +39,7 @@ public class GameFlow {
 				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
 				break;
 			case "BATTLEFIELD_PLAYER_READY": // Teleport players to battlefield
-				for (Player player : GameInfo.getWorld().getPlayers()){
+				for (Player player : Game.getWorld().getPlayers()){
 					player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
 				}
 				break;

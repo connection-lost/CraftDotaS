@@ -1,4 +1,4 @@
-package me.crafter.mc.craftdotas.building;
+package me.crafter.mc.craftdotas.object.building;
 
 public class Tower extends Building{
 	

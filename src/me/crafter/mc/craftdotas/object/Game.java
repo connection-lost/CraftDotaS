@@ -1,12 +1,12 @@
-package me.crafter.mc.craftdotas.action;
+package me.crafter.mc.craftdotas.object;
 
 import java.util.Map;
 
 import org.bukkit.World;
 
-import me.crafter.mc.craftdotas.building.Building;
+import me.crafter.mc.craftdotas.object.building.Building;
 
-public class GameInfo {
+public class Game {
 
 	private static World world;
 	// <Side ID, Building>
@@ -15,7 +15,7 @@ public class GameInfo {
 	private static Map<Integer, Integer> scores;
 	private static int tick;
 	
-	public GameInfo(){
+	public Game(){
 		
 	}
 

@@ -34,13 +34,13 @@ public class Team {
 	public String getSuffix() {return suffix;}
 	public Location getSpawnLocation() {return spawnlocation;}
 	
-	public Team getTeam(int id){
+	public static Team getTeam(int id){
 		return teams.get(id);
 	}
 	
-	public int getPlayerTeam(Player player) {return playerteams.get(player);}
+	public static int getPlayerTeam(Player player) {return playerteams.get(player);}
 	
-	public List<Player> getMembers(int teamid){
+	public static List<Player> getMembers(int teamid){
 		List<Player> members = new ArrayList<Player>();
 		for (Player player : playerteams.keySet()){
 			if (playerteams.get(player) == teamid) {

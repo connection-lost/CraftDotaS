@@ -4,15 +4,19 @@ Teams:
    prefix: "&7[¹ÛÖÚ] "
    suffix: "&r"
    default: true
+   spawn: [100, 100, 100]
  - id: 0
    displayname: "Ò°¹Ö"
    prefix: "&f[Ò°¹Ö] "
    suffix: "&r"
+   spawn: [100, 100, 100]
  - id: 1
    displayname: "Ìì»Ô"
    prefix: "&b[Ìì»Ô] "
    suffix: "&r"
+   spawn: [100, 100, 100]
  - id: 2
    displayname: "Ò¹÷Ê"
    prefix: "&c[Ò¹÷Ê] "
    suffix: "&r"
+   spawn: [100, 100, 100]

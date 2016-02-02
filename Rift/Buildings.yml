@@ -1,0 +1,41 @@
+buildings:
+- id: 100
+  type: "base"
+  side: 1
+  health: 200
+  maxhealth: 200
+  healthregen: 0
+  displayname: "紫队基地水晶"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -80.0
+    y: 9.0
+    z: -80.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -70.0
+    y: 20.0
+    z: -70.0
+  invulnerable: true
+  unlocks: []
+- id: 200
+  type: "base"
+  side: 2
+  health: 200
+  maxhealth: 200
+  healthregen: 0
+  displayname: "蓝队基地水晶"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 80.0
+    y: 9.0
+    z: 80.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 70.0
+    y: 20.0
+    z: 70.0
+  invulnerable: true
+  unlocks: []

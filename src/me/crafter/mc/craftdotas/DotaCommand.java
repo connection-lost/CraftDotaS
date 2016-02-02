@@ -13,6 +13,7 @@ public class DotaCommand implements CommandExecutor {
     	// Don't have to check dota because this class will only register one command
     	if (args.length < 1){
     		showUsage(sender);
+    		return true;
     	}
     	switch (args[0]){
     	case "load":

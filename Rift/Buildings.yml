@@ -15,10 +15,170 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -70.0
-    y: 20.0
+    y: 24.0
     z: -70.0
   invulnerable: true
   unlocks: []
+- id: 111
+  type: "tower"
+  side: 1
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "紫队下路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -94.0
+    y: 6.0
+    z: 29.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -88.0
+    y: 21.0
+    z: 35.0
+  invulnerable: false
+  unlocks: [112]
+- id: 112
+  type: "tower"
+  side: 1
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "紫队下路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -99.0
+    y: 9.0
+    z: -35.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -93.0
+    y: 24.0
+    z: -29.0
+  invulnerable: true
+  unlocks: [141, 142]
+- id: 121
+  type: "tower"
+  side: 1
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "紫队中路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -35.0
+    y: 6.0
+    z: 9.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -29.0
+    y: 21.0
+    z: 15.0
+  invulnerable: false
+  unlocks: [122]
+- id: 122
+  type: "tower"
+  side: 1
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "紫队中路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -49.0
+    y: 9.0
+    z: -49.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -43.0
+    y: 24.0
+    z: -43.0
+  invulnerable: true
+  unlocks: [141, 142]
+- id: 131
+  type: "tower"
+  side: 1
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "紫队上路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 14.0
+    y: 6.0
+    z: -85.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 20.0
+    y: 21.0
+    z: -79.0
+  invulnerable: false
+  unlocks: [132]
+- id: 132
+  type: "tower"
+  side: 1
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "紫队上路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -35.0
+    y: 9.0
+    z: -99.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -29.0
+    y: 24.0
+    z: -93.0
+  invulnerable: true
+  unlocks: [141, 142]
+- id: 141
+  type: "tower"
+  side: 1
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "紫队基地左塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -81.0
+    y: 9.0
+    z: -63.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -75.0
+    y: 24.0
+    z: -57.0
+  invulnerable: true
+  unlocks: [100]
+- id: 132
+  type: "tower"
+  side: 1
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "紫队基地右塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -63.0
+    y: 9.0
+    z: -81.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -57.0
+    y: 24.0
+    z: -75.0
+  invulnerable: true
+  unlocks: [100]
 - id: 200
   type: "base"
   side: 2
@@ -35,7 +195,167 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 70.0
-    y: 20.0
+    y: 24.0
     z: 70.0
   invulnerable: true
   unlocks: []
+- id: 211
+  type: "tower"
+  side: 2
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "蓝队上路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 94.0
+    y: 6.0
+    z: -29.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 88.0
+    y: 21.0
+    z: -35.0
+  invulnerable: false
+  unlocks: [212]
+- id: 212
+  type: "tower"
+  side: 2
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "蓝队上路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 99.0
+    y: 9.0
+    z: 35.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 93.0
+    y: 24.0
+    z: 29.0
+  invulnerable: true
+  unlocks: [241, 242]
+- id: 221
+  type: "tower"
+  side: 2
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "蓝队中路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 35.0
+    y: 6.0
+    z: -9.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 29.0
+    y: 21.0
+    z: -15.0
+  invulnerable: false
+  unlocks: [222]
+- id: 22
+  type: "tower"
+  side: 2
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "蓝队中路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 49.0
+    y: 9.0
+    z: 49.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 43.0
+    y: 24.0
+    z: 43.0
+  invulnerable: true
+  unlocks: [241, 242]
+- id: 231
+  type: "tower"
+  side: 2
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "蓝队下路一塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: -14.0
+    y: 6.0
+    z: 85.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: -20.0
+    y: 21.0
+    z: 79.0
+  invulnerable: false
+  unlocks: [232]
+- id: 232
+  type: "tower"
+  side: 2
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "蓝队下路二塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 35.0
+    y: 9.0
+    z: 99.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 29.0
+    y: 24.0
+    z: 93.0
+  invulnerable: true
+  unlocks: [241, 242]
+- id: 241
+  type: "tower"
+  side: 2
+  health: 75
+  maxhealth: 75
+  healthregen: 0
+  displayname: "蓝队基地左塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 81.0
+    y: 9.0
+    z: 63.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 75.0
+    y: 24.0
+    z: 57.0
+  invulnerable: true
+  unlocks: [200]
+- id: 232
+  type: "tower"
+  side: 2
+  health: 100
+  maxhealth: 100
+  healthregen: 0
+  displayname: "蓝队基地右塔"
+  locations:
+  - ==: org.bukkit.Location
+    world: rift
+    x: 63.0
+    y: 9.0
+    z: 81.0
+  - ==: org.bukkit.Location
+    world: rift
+    x: 57.0
+    y: 24.0
+    z: 75.0
+  invulnerable: true
+  unlocks: [200]

@@ -1,6 +1,10 @@
-Start: -1800
-End: 60000
-Flow:
+world: rift
+towinscore: 9999999
+killscore: 1
+deathscore: 0
+start: -1800
+end: 60000
+flow:
 - tick: -1800
   action: "SYSTEM_ANNOUNCE"
   content: "Game is getting ready to start!"

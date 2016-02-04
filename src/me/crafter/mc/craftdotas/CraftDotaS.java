@@ -7,7 +7,10 @@ import me.crafter.mc.craftdotas.listener.InventoryListener;
 
 public class CraftDotaS extends JavaPlugin {
 
+	public static CraftDotaS plugin;
+	
 	public void onEnable(){
+		plugin = this;
     	getServer().getPluginManager().registerEvents(new InventoryListener(), this);
     	Bukkit.getPluginCommand("dota").setExecutor(new DotaCommand());
     	Bukkit.getPluginCommand("dota").setTabCompleter(new DotaCommandCompleter());

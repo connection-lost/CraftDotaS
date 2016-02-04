@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import me.crafter.mc.craftdotas.action.FileLoader;
 import me.crafter.mc.craftdotas.object.Game;
 import net.md_5.bungee.api.ChatColor;
 
@@ -17,7 +18,16 @@ public class DotaCommand implements CommandExecutor {
     	}
     	switch (args[0]){
     	case "load":
-    		// LOAD GAME
+    		if (args.length < 2){
+    			sender.sendMessage(ChatColor.RED + "/dota load <name>");
+    			break;
+    		}
+    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "Loading map " + args[1]);
+    		try {
+				FileLoader.loadGame(CraftDotaS.plugin.getDataFolder(), args[1]);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     		break;
     	case "start":
     		// START GAME

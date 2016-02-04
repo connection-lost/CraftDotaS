@@ -5,7 +5,7 @@ buildings:
   health: 200
   maxhealth: 200
   healthregen: 0
-  displayname: "×Ï¶Ó»ùµØË®¾§"
+  displayname: "ç´«é˜ŸåŸºåœ°æ°´æ™¶"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -25,7 +25,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "×Ï¶ÓÏÂÂ·Ò»Ëş"
+  displayname: "ç´«é˜Ÿä¸‹è·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -45,7 +45,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "×Ï¶ÓÏÂÂ·¶şËş"
+  displayname: "ç´«é˜Ÿä¸‹è·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -65,7 +65,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "×Ï¶ÓÖĞÂ·Ò»Ëş"
+  displayname: "ç´«é˜Ÿä¸­è·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -85,7 +85,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "×Ï¶ÓÖĞÂ·¶şËş"
+  displayname: "ç´«é˜Ÿä¸­è·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -105,7 +105,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "×Ï¶ÓÉÏÂ·Ò»Ëş"
+  displayname: "ç´«é˜Ÿä¸Šè·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -125,7 +125,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "×Ï¶ÓÉÏÂ·¶şËş"
+  displayname: "ç´«é˜Ÿä¸Šè·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -145,7 +145,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "×Ï¶Ó»ùµØ×óËş"
+  displayname: "ç´«é˜ŸåŸºåœ°å·¦å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -165,7 +165,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "×Ï¶Ó»ùµØÓÒËş"
+  displayname: "ç´«é˜ŸåŸºåœ°å³å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -185,7 +185,7 @@ buildings:
   health: 200
   maxhealth: 200
   healthregen: 0
-  displayname: "À¶¶Ó»ùµØË®¾§"
+  displayname: "è“é˜ŸåŸºåœ°æ°´æ™¶"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -205,7 +205,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "À¶¶ÓÉÏÂ·Ò»Ëş"
+  displayname: "è“é˜Ÿä¸Šè·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -225,7 +225,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "À¶¶ÓÉÏÂ·¶şËş"
+  displayname: "è“é˜Ÿä¸Šè·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -245,7 +245,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "À¶¶ÓÖĞÂ·Ò»Ëş"
+  displayname: "è“é˜Ÿä¸­è·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -259,13 +259,13 @@ buildings:
     z: -15.0
   invulnerable: false
   unlocks: [222]
-- id: 22
+- id: 222
   type: "tower"
   side: 2
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "À¶¶ÓÖĞÂ·¶şËş"
+  displayname: "è“é˜Ÿä¸­è·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -285,7 +285,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "À¶¶ÓÏÂÂ·Ò»Ëş"
+  displayname: "è“é˜Ÿä¸‹è·¯ä¸€å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -305,7 +305,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "À¶¶ÓÏÂÂ·¶şËş"
+  displayname: "è“é˜Ÿä¸‹è·¯äºŒå¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -325,7 +325,7 @@ buildings:
   health: 75
   maxhealth: 75
   healthregen: 0
-  displayname: "À¶¶Ó»ùµØ×óËş"
+  displayname: "è“é˜ŸåŸºåœ°å·¦å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift
@@ -345,7 +345,7 @@ buildings:
   health: 100
   maxhealth: 100
   healthregen: 0
-  displayname: "À¶¶Ó»ùµØÓÒËş"
+  displayname: "è“é˜ŸåŸºåœ°å³å¡”"
   locations:
   - ==: org.bukkit.Location
     world: rift

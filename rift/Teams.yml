@@ -1,26 +1,26 @@
 teams:
 - id: -1
-  displayname: "¹ÛÖÚ"
-  prefix: "&7[¹ÛÖÚ] "
+  displayname: "è§‚ä¼—"
+  prefix: "&7[è§‚ä¼—] "
   suffix: "&r"
   default: true
   spawn: [-144, 49, 0]
-  comment_not_used: "ÎŞ¶ÓÎé»ò¹ÛÖÚµÄ³öÉúµã"
+  comment_not_used: "æ— é˜Ÿä¼æˆ–è§‚ä¼—çš„å‡ºç”Ÿç‚¹"
 - id: 0
-  displayname: "Ò°¹Ö"
-  prefix: "&f[Ò°¹Ö] "
+  displayname: "é‡æ€ª"
+  prefix: "&f[é‡æ€ª] "
   suffix: "&r"
   spawn: [0, 0, 0]
-  comment_not_used: "Ò°¹Ö²»Ó¦¸ÃÓĞÍæ¼ÒÈë¶Ó"
+  comment_not_used: "é‡æ€ªä¸åº”è¯¥æœ‰ç©å®¶å…¥é˜Ÿ"
 - id: 1
-  displayname: "Ìì»Ô"
-  prefix: "&b[Ìì»Ô] "
+  displayname: "å¤©è¾‰"
+  prefix: "&b[å¤©è¾‰] "
   suffix: "&r"
   spawn: [-96, 12, -96]
-  comment_not_used: "×Ï¶Ó"
+  comment_not_used: "ç´«é˜Ÿ"
 - id: 2
-  displayname: "Ò¹÷Ê"
-  prefix: "&c[Ò¹÷Ê] "
+  displayname: "å¤œé­‡"
+  prefix: "&c[å¤œé­‡] "
   suffix: "&r"
   spawn: [96, 12, 96]
-  comment_not_used: "À¶¶Ó"
+  comment_not_used: "è“é˜Ÿ"

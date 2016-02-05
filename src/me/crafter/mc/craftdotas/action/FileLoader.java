@@ -93,6 +93,12 @@ public class FileLoader {
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname + "\t" + health + "/" + maxhealth + "(+" + healthregen + ")");
 		}
 		
+		// Step 4 - Players.yml
+		
+		// Step 5 - Neutrals.yml
+		
+		// Step 6 - Creeps.yml
+		
 	}
 	
 }

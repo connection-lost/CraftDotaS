@@ -4,23 +4,43 @@ teams:
   prefix: "&7[观众] "
   suffix: "&r"
   default: true
-  spawn: [-144, 49, 0]
-  comment_not_used: "无队伍或观众的出生点"
+  spawn: 
+    ==: org.bukkit.Location
+    world: rift
+    x: -144.0
+    y: 49.0
+    z: 0.0
+  comment: "无队伍或观众的出生点"
 - id: 0
   displayname: "野怪"
   prefix: "&f[野怪] "
   suffix: "&r"
-  spawn: [0, 0, 0]
-  comment_not_used: "野怪不应该有玩家入队"
+  spawn:
+    ==: org.bukkit.Location
+    world: rift
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  comment: "野怪不应该有玩家入队"
 - id: 1
-  displayname: "天辉"
-  prefix: "&b[天辉] "
+  displayname: "蓝队"
+  prefix: "&b[蓝队] "
   suffix: "&r"
-  spawn: [-96, 12, -96]
-  comment_not_used: "紫队"
+  spawn:
+    ==: org.bukkit.Location
+    world: rift
+    x: -96.0
+    y: 12.0
+    z: -96.0
+  comment: "蓝队"
 - id: 2
-  displayname: "夜魇"
-  prefix: "&c[夜魇] "
+  displayname: "紫队"
+  prefix: "&c[紫队] "
   suffix: "&r"
-  spawn: [96, 12, 96]
-  comment_not_used: "蓝队"
+  spawn:
+    ==: org.bukkit.Location
+    world: rift
+    x: -96.0
+    y: 12.0
+    z: -96.0
+  comment: "紫队"

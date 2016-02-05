@@ -159,7 +159,7 @@ buildings:
     z: -57.0
   invulnerable: true
   unlocks: [100]
-- id: 132
+- id: 142
   type: "tower"
   side: 1
   health: 100
@@ -339,7 +339,7 @@ buildings:
     z: 57.0
   invulnerable: true
   unlocks: [200]
-- id: 232
+- id: 242
   type: "tower"
   side: 2
   health: 100

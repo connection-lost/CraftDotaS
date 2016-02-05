@@ -45,13 +45,7 @@ public class FileLoader {
 			String displayname = ChatColor.translateAlternateColorCodes('&', (String) team.get("displayname"));
 			String prefix = ChatColor.translateAlternateColorCodes('&', (String) team.get("prefix"));
 			String suffix = ChatColor.translateAlternateColorCodes('&', (String) team.get("suffix"));
-			List<Integer> spawnxyz = (List<Integer>) team.get("spawn");
-			Location spawn;
-			if (spawnxyz.size() == 3){
-				spawn = new Location(world, spawnxyz.get(0), spawnxyz.get(1), spawnxyz.get(2));
-			} else {
-				spawn = new Location(world, spawnxyz.get(0), spawnxyz.get(1), spawnxyz.get(2), spawnxyz.get(3), spawnxyz.get(4));
-			}
+			Location spawn = (Location) team.get("spawn");
 			new Team(id, displayname, prefix, suffix, spawn);
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
 		}

@@ -25,8 +25,10 @@ public class DotaCommand implements CommandExecutor {
     		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "Loading map " + args[1]);
     		try {
 				FileLoader.loadGame(CraftDotaS.plugin.getDataFolder(), args[1]);
+	    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "Loaded map " + args[1]);
 			} catch (Exception e) {
 				e.printStackTrace();
+	    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RED + "Load failed");
 			}
     		break;
     	case "start":
@@ -53,7 +55,7 @@ public class DotaCommand implements CommandExecutor {
     }
     
     public void showUsage(CommandSender sender){
-    	sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "CraftDotaS插件指令说明");
+    	sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "CraftDotaS 插件指令说明");
     	sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "/dota load <world> - 在指定世界加载配置");
     	sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "/dota start <world> - 在指定世界开始游戏");
     	sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "/dota tick <tick> - 设置当前游戏tick时间");

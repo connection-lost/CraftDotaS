@@ -2,7 +2,12 @@ package me.crafter.mc.craftdotas.object;
 
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.World;
+import org.bukkit.scheduler.BukkitTask;
+
+import me.crafter.mc.craftdotas.CraftDotaS;
+import me.crafter.mc.craftdotas.task.GameTick;
 
 public class Game {
 
@@ -15,6 +20,7 @@ public class Game {
 	private static int killscore;
 	private static int deathscore;
 	private static int towinscore;
+	public static BukkitTask task;
 	
 	public Game(World world_, int start_, int end_, int killscore_, int deathscore_, int towinscore_){
 		world = world_;
@@ -27,12 +33,25 @@ public class Game {
 		ison = false;
 	}
 
-	public void start(){
+	public static void ready(){
+		if (task == null){
+			task = Bukkit.getScheduler().runTaskTimer(CraftDotaS.plugin, new GameTick(), 1L, 1L);
+		}
+	}
+	
+	public static void start(){
 		ison = true;
 	}
 	
-	public void stop(){
+	public static void stop(){
 		ison = false;
+	}
+	
+	public static void end(){
+		if (task != null){
+			task.cancel();
+			task = null;
+		}
 	}
 
 	//getters

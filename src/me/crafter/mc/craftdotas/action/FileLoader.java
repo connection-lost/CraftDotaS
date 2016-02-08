@@ -36,6 +36,13 @@ public class FileLoader {
 		new Game(world, start, end, killscore, deathscore, towinscore);
 		Bukkit.getLogger().info("[CraftDotaS] World: " + world.getName() + " " + start + "~" + end);
 		Bukkit.getLogger().info("[CraftDotaS] ks/ds/ws: " + killscore + " / " + deathscore + " / " + towinscore);
+		for (Map<?, ?> flow : game.getMapList("flow")){
+			int tick = (int) flow.get("tick");
+			String action = (String) flow.get("action");
+			String content = ChatColor.translateAlternateColorCodes('&', (String) flow.get("content"));
+			Bukkit.getLogger().info("[CraftDotaS] Gameflow: " + tick + ": " + action + " (" + content + ")");
+			GameFlow.newGameFlow(tick, action, content);
+		}
 		
 		// Step 2 - Teams.yml
 		Bukkit.getLogger().info("[CraftDotaS] Loading Teams.yml...");
@@ -79,9 +86,9 @@ public class FileLoader {
 		    	break;
 		    case "tower":
 				AttackMove attackmove = AttackMove.valueOf((String) building.get("attackmove"));
-				int damage = (int) building.get("damage");
-				double attackspeed = (int) building.get("attackspeed");
-				new Tower(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0, attackmove, attackspeed, damage);
+				double damage = (double) building.get("damage");
+				int attackspeed = (int) building.get("attackspeed");
+				new Tower(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0, attackmove, damage, attackspeed);
 		    	break;
 		    }
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname + "\t" + health + "/" + maxhealth + "(+" + healthregen + ")");

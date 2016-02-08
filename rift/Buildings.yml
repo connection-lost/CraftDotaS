@@ -39,6 +39,9 @@ buildings:
     z: 35.0
   invulnerable: false
   unlocks: [112]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 112
   type: "tower"
   side: 1
@@ -59,6 +62,9 @@ buildings:
     z: -29.0
   invulnerable: true
   unlocks: [141, 142]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 121
   type: "tower"
   side: 1
@@ -79,6 +85,9 @@ buildings:
     z: 15.0
   invulnerable: false
   unlocks: [122]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 122
   type: "tower"
   side: 1
@@ -99,6 +108,9 @@ buildings:
     z: -43.0
   invulnerable: true
   unlocks: [141, 142]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 131
   type: "tower"
   side: 1
@@ -119,6 +131,9 @@ buildings:
     z: -79.0
   invulnerable: false
   unlocks: [132]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 132
   type: "tower"
   side: 1
@@ -139,6 +154,9 @@ buildings:
     z: -93.0
   invulnerable: true
   unlocks: [141, 142]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 141
   type: "tower"
   side: 1
@@ -159,6 +177,9 @@ buildings:
     z: -57.0
   invulnerable: true
   unlocks: [100]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 142
   type: "tower"
   side: 1
@@ -179,6 +200,9 @@ buildings:
     z: -75.0
   invulnerable: true
   unlocks: [100]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 200
   type: "base"
   side: 2
@@ -219,6 +243,9 @@ buildings:
     z: -35.0
   invulnerable: false
   unlocks: [212]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 212
   type: "tower"
   side: 2
@@ -239,6 +266,9 @@ buildings:
     z: 29.0
   invulnerable: true
   unlocks: [241, 242]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 221
   type: "tower"
   side: 2
@@ -259,6 +289,9 @@ buildings:
     z: -15.0
   invulnerable: false
   unlocks: [222]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 222
   type: "tower"
   side: 2
@@ -279,6 +312,9 @@ buildings:
     z: 43.0
   invulnerable: true
   unlocks: [241, 242]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 231
   type: "tower"
   side: 2
@@ -299,6 +335,9 @@ buildings:
     z: 79.0
   invulnerable: false
   unlocks: [232]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 232
   type: "tower"
   side: 2
@@ -319,6 +358,9 @@ buildings:
     z: 93.0
   invulnerable: true
   unlocks: [241, 242]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 241
   type: "tower"
   side: 2
@@ -339,6 +381,9 @@ buildings:
     z: 57.0
   invulnerable: true
   unlocks: [200]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100
 - id: 242
   type: "tower"
   side: 2
@@ -359,3 +404,6 @@ buildings:
     z: 75.0
   invulnerable: true
   unlocks: [200]
+  attackmove: "FIREBALL"
+  damage: 4.0
+  attackspeed: 100

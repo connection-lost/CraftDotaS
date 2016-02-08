@@ -12,11 +12,11 @@ import net.md_5.bungee.api.ChatColor;
 
 public class GameFlow {
 
-	private static Map<Integer, String[]> gameflows;
+	private static Map<Integer, String[]> gameflows = new HashMap<Integer, String[]>();
 	
-	public static void newGameFlow(int time, String action, String content){
+	public static void newGameFlow(int tick, String action, String content){
 		String[] actioncontent = {action, content};
-		gameflows.put(time, actioncontent);
+		gameflows.put(tick, actioncontent);
 	}
 	
 	public static String[] getGameFlow(int time){
@@ -40,7 +40,9 @@ public class GameFlow {
 				break;
 			case "BATTLEFIELD_PLAYER_READY": // Teleport players to battlefield
 				for (Player player : Game.getWorld().getPlayers()){
-					player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
+					if (Team.getPlayerTeam(player) != null){
+						player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
+					}
 				}
 				break;
 			case "BATTLEFIELD_GATE_OPEN": // Open player base gate
@@ -52,8 +54,7 @@ public class GameFlow {
 			case "BATTLEFIELD_SPAWN_CREEP": // Spawn teamed creeps
 				break;
 			case "SYSTEM_END": // Game force end after a while
-				break;
-			case "SYSTEM_STOP": // Game terminate
+				Game.end();
 				break;
 			}
 		}

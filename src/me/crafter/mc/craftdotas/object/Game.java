@@ -17,18 +17,14 @@ public class Game {
 	private static boolean ison; // Whether game is running, it will turn off if game is finished
 	private static int start;
 	private static int end;
-	private static int killscore;
-	private static int deathscore;
 	private static int towinscore;
 	public static BukkitTask task;
 	
-	public Game(World world_, int start_, int end_, int killscore_, int deathscore_, int towinscore_){
+	public Game(World world_, int start_, int end_, int towinscore_){
 		world = world_;
 		tick = start_;
 		start = start_;
 		end = end_;
-		killscore = killscore_;
-		deathscore = deathscore_;
 		towinscore = towinscore_;
 		ison = false;
 	}
@@ -62,8 +58,6 @@ public class Game {
 	public static boolean isOn() {return ison;}
 	public static int getStart(){return start;}
 	public static int getEnd(){return end;}
-	public static int getKillScore(){return killscore;}
-	public static int getDeathScore(){return deathscore;}
 	public static int getToWinScore(){return towinscore;}
 
 	//setters

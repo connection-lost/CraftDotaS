@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.bukkit.Location;
 
+import me.crafter.mc.craftdotas.object.Bounty;
+
 public class Building {
 
 	// Which side is the building at. Default 0 = neutral, 1 = radiant, 2 = dire
@@ -29,8 +31,8 @@ public class Building {
 	// Static buildings
 	private static Map<Integer, Building> buildings;
 	// Points
-	private int damagescore;
-	private int destroyscore;
+	private Bounty damagebounty;
+	private Bounty killbounty;
 
 	public Building(int side_, int id_, double health_, double maxhealth_, double healthregen_, boolean destroyed_, 
 			String displayname_, Location[] locations_, boolean invulnerable_, int[] unlocks_, int damagescore_, int destroyscore_){
@@ -57,8 +59,8 @@ public class Building {
 	public boolean isInvulnerable() {return invulnerable;}
 	public int[] getUnlocks() {return unlocks;}
 	public static Map<Integer, Building> getBuildings() {return buildings;}
-	public int getDamageScore() {return damagescore;}
-	public int getDestroyScore() {return destroyscore;}
+	public Bounty getDamageBounty() {return damagebounty;}
+	public Bounty getKillBounty() {return killbounty;}
 
 	public void setHealth(double newhealth) {health = newhealth;}
 	public void setDestroyed(boolean newdestroyed) {destroyed = newdestroyed;}

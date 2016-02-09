@@ -1,7 +1,5 @@
 world: rift
 towinscore: 9999999
-killscore: 1
-deathscore: 0
 start: -1800
 end: 60000
 flow:

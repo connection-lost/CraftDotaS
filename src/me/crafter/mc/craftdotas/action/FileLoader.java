@@ -30,12 +30,10 @@ public class FileLoader {
 		World world = Bukkit.getWorld(game.getString("world"));
 		int start = game.getInt("start");
 		int end = game.getInt("end");
-		int killscore = game.getInt("killscore");
-		int deathscore = game.getInt("deathscore");
 		int towinscore = game.getInt("towinscore");
-		new Game(world, start, end, killscore, deathscore, towinscore);
+		new Game(world, start, end, towinscore);
 		Bukkit.getLogger().info("[CraftDotaS] World: " + world.getName() + " " + start + "~" + end);
-		Bukkit.getLogger().info("[CraftDotaS] ks/ds/ws: " + killscore + " / " + deathscore + " / " + towinscore);
+		Bukkit.getLogger().info("[CraftDotaS] To win: " + towinscore);
 		for (Map<?, ?> flow : game.getMapList("flow")){
 			int tick = (int) flow.get("tick");
 			String action = (String) flow.get("action");

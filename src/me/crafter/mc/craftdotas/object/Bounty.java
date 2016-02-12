@@ -16,10 +16,6 @@ public class Bounty {
 
 	private Bounty(){}
 	
-	
-	
-	
-
 	public int getScore() {return score;}
 	public boolean isScale() {return scale;}
 	public boolean isDropItemOnGround() {return dropitemonground;}

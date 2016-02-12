@@ -15,6 +15,7 @@ public class Team {
 	private String prefix;
 	private String suffix;
 	private Location spawnlocation;
+	private Bounty bounty;
 	
 	private static Map<Player, Team> playerteams = new HashMap<Player, Team>();
 	private static Map<Integer, Team> teams = new HashMap<Integer, Team>();
@@ -33,6 +34,7 @@ public class Team {
 	public String getPrefix() {return prefix;}
 	public String getSuffix() {return suffix;}
 	public Location getSpawnLocation() {return spawnlocation;}
+	public Bounty getBounty() {return bounty;}
 	
 	public static Team getTeam(int id){
 		return teams.get(id);
@@ -60,5 +62,6 @@ public class Team {
 		return members;
 	}
 	
-	
+	public void setBounty(Bounty bounty_) {bounty = bounty_;}
+
 }

@@ -65,6 +65,8 @@ public class Building {
 	public void setHealth(double newhealth) {health = newhealth;}
 	public void setDestroyed(boolean newdestroyed) {destroyed = newdestroyed;}
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
+	public void setDamageBounty(Bounty bounty) {damagebounty = bounty;}
+	public void setKillBounty(Bounty bounty) {killbounty = bounty;}
 	
 	public boolean damage(double damage){
 		health = Math.max(0, health - damage);

@@ -67,7 +67,10 @@ public class FileLoader {
 			double healthregen = (int) building.get("healthregen");
 			String displayname = ChatColor.translateAlternateColorCodes('&', (String) building.get("displayname"));
 			List<Location> locationsp = (List<Location>) building.get("locations");
-			Location[] locations = {locationsp.get(0), locationsp.get(1)};
+			Location[] locationspre = {locationsp.get(0), locationsp.get(1)};
+			Location locationmin = new Location(locationspre[0].getWorld(), Math.min(locationspre[0].getX(), locationspre[1].getX()), Math.min(locationspre[0].getY(), locationspre[1].getY()), Math.min(locationspre[0].getZ(), locationspre[1].getZ()));
+			Location locationmax = new Location(locationspre[0].getWorld(), Math.max(locationspre[0].getX(), locationspre[1].getX()), Math.max(locationspre[0].getY(), locationspre[1].getY()), Math.max(locationspre[0].getZ(), locationspre[1].getZ()));
+			Location[] locations = {locationmin, locationmax};
 			boolean invulnerable = (boolean) building.get("invulnerable");
 			List<Integer> unlocksl = ((List<Integer>) building.get("unlocks")); 
 			int[] unlocks = new int[unlocksl.size()];

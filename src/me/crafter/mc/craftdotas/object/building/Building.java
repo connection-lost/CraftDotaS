@@ -26,7 +26,7 @@ public class Building {
 	private Location[] locations;
 	// Whether building is currently invulnerable
 	private boolean invulnerable;
-	// What building will become attackble if this building falls
+	// What building will become attackable if this building falls
 	private int[] unlocks;
 	// Static buildings
 	private static Map<Integer, Building> buildings;

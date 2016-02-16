@@ -1,7 +1,9 @@
 package me.crafter.mc.craftdotas.listener;
 
+import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -40,8 +42,11 @@ public class TowerDamageListener {
 						if (broken){
 							building.kill();
 						}
-						// TODO Handle animation
-						
+						// Handle animation
+						location.getWorld().spigot().playEffect(location, Effect.MAGIC_CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 24, 16);
+						location.getWorld().spigot().playEffect(location, Effect.CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 16, 16);
+						location.getWorld().spigot().playEffect(location, Effect.TILE_DUST, 0, 0, 0.8F, 0.8F, 0.8F, 0.65F, 18, 16);
+						location.getWorld().playSound(location, Sound.EXPLODE, 0.4F, 1.45F);
 						// Handle bounty
 						Bounty bounty;
 						if (broken){

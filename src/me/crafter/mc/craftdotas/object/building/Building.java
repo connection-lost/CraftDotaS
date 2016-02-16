@@ -80,5 +80,10 @@ public class Building {
 	public void tick(){
 		// Base building class does nothing
 	}
+	
+	public void kill(){
+		setDestroyed(true);
+		// TODO Handle animations and such
+	}
 
 }

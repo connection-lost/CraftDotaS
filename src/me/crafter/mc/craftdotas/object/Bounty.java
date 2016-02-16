@@ -3,6 +3,7 @@ package me.crafter.mc.craftdotas.object;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class Bounty {
@@ -43,6 +44,21 @@ public class Bounty {
 	
 	public static Bounty build(){
 		return new Bounty();
+	}
+	
+	public void award(Player receiver){
+		Team team = Team.getPlayerTeam(receiver);
+		// Score
+		Game.addScore(team.getId(), team.getBounty().getScore());
+		// Item
+		List<ItemStack> itemstacks = team.getBounty().getItems();
+		for (ItemStack itemstack : itemstacks){
+			if (team.getBounty().isDropItemOnGround()){
+				receiver.getWorld().dropItemNaturally(receiver.getLocation(), itemstack);
+			} else {
+				receiver.getInventory().addItem(itemstack);
+			}
+		}
 	}
 	
 }

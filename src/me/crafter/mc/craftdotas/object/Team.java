@@ -40,7 +40,14 @@ public class Team {
 		return teams.get(id);
 	}
 	
-	public static Team getPlayerTeam(Player player) {return playerteams.get(player);}
+	public static Team getPlayerTeam(Player player) {
+		Team team = playerteams.get(player);
+		if (team == null){
+			playerteams.put(player, teams.get(0));
+			return teams.get(0);
+		}
+		return team;
+	}
 	
 	public static List<Player> getMembersByTeamId(int teamid){
 		List<Player> members = new ArrayList<Player>();

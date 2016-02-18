@@ -18,8 +18,8 @@ teams:
   spawn:
     ==: org.bukkit.Location
     world: rift
-    x: 0.0
-    y: 0.0
+    x: -143.0
+    y: 49.0
     z: 0.0
   comment: "野怪不应该有玩家入队"
 - id: 1

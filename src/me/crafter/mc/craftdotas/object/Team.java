@@ -43,8 +43,8 @@ public class Team {
 	public static Team getPlayerTeam(Player player) {
 		Team team = playerteams.get(player);
 		if (team == null){
-			playerteams.put(player, teams.get(0));
-			return teams.get(0);
+			playerteams.put(player, teams.get(-1));
+			return teams.get(-1);
 		}
 		return team;
 	}

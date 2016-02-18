@@ -1,6 +1,7 @@
 package me.crafter.mc.craftdotas.object.building;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class Building {
 	// What building will become attackable if this building falls
 	private int[] unlocks;
 	// Static buildings
-	private static Map<Integer, Building> buildings;
+	private static Map<Integer, Building> buildings = new HashMap<Integer, Building>();
 	// Points
 	private Bounty damagebounty;
 	private Bounty killbounty;
@@ -51,6 +52,7 @@ public class Building {
 		locations = locations_;
 		invulnerable = invulnerable_;
 		unlocks = unlocks_;
+		buildings.put(id, this);
 	}
 		
 	public int getSide() {return side;}

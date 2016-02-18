@@ -1,10 +1,13 @@
 package me.crafter.mc.craftdotas.object.building;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Location;
 
 import me.crafter.mc.craftdotas.object.Bounty;
+import me.crafter.mc.craftdotas.object.SingleHologram;
 
 public class Building {
 
@@ -33,6 +36,8 @@ public class Building {
 	// Points
 	private Bounty damagebounty;
 	private Bounty killbounty;
+	// Hologram
+	private List<SingleHologram> holograms = new ArrayList<SingleHologram>();	
 
 	public Building(int side_, int id_, double health_, double maxhealth_, double healthregen_, boolean destroyed_, 
 			String displayname_, Location[] locations_, boolean invulnerable_, int[] unlocks_, int damagescore_, int destroyscore_){
@@ -67,6 +72,22 @@ public class Building {
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
 	public void setDamageBounty(Bounty bounty) {damagebounty = bounty;}
 	public void setKillBounty(Bounty bounty) {killbounty = bounty;}
+	public void addHologram(SingleHologram hologram){
+		hologram.setHost(this);
+		holograms.add(hologram);
+		updateHologram();
+	}
+	public void clearHologram(){
+		for (SingleHologram hologram : holograms){
+			hologram.destroy();
+		}
+		holograms = new ArrayList<SingleHologram>();
+	}
+	public void updateHologram(){
+		for (SingleHologram hologram : holograms){
+			hologram.update();
+		}
+	}
 	
 	public boolean damage(double damage){
 		health = Math.max(0, health - damage);

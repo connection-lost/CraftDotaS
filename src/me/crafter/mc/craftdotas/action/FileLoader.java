@@ -7,13 +7,16 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import me.crafter.mc.craftdotas.object.Game;
+import me.crafter.mc.craftdotas.object.SingleHologram;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.object.building.AttackMove;
 import me.crafter.mc.craftdotas.object.building.Base;
+import me.crafter.mc.craftdotas.object.building.Building;
 import me.crafter.mc.craftdotas.object.building.Decoration;
 import me.crafter.mc.craftdotas.object.building.Tower;
 import net.md_5.bungee.api.ChatColor;
@@ -78,21 +81,32 @@ public class FileLoader {
 		    {
 		        unlocks[i] = unlocksl.get(i).intValue();
 		    }
+		    Building resultbuilding = null;
 		    switch (type){
 		    case "decoration":
-		    	new Decoration(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0);
+		    	resultbuilding = new Decoration(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0);
 		    	break;
 		    case "base":
-		    	new Base(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0);
+		    	resultbuilding = new Base(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0);
 		    	break;
 		    case "tower":
 				AttackMove attackmove = AttackMove.valueOf((String) building.get("attackmove"));
 				double damage = (double) building.get("damage");
 				int attackspeed = (int) building.get("attackspeed");
-				new Tower(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0, attackmove, damage, attackspeed);
+				resultbuilding = new Tower(side, id, health, maxhealth, healthregen, health < 0.1, displayname, locations, invulnerable, unlocks, 0, 0, attackmove, damage, attackspeed);
 		    	break;
 		    }
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname + "\t" + health + "/" + maxhealth + "(+" + healthregen + ")");
+		    if (building.get("holograms") != null){
+		    	for (Object o : (List<?>)building.get("holograms")){
+		    		Map<?, ?> hologram = (Map<?, ?>)o;
+					int hologramid = (int) hologram.get("id");
+					Location hologramlocation = (Location) hologram.get("location");
+					List<String> hologramlines = (List<String>) hologram.get("lines");
+					resultbuilding.addHologram(new SingleHologram(hologramid, hologramlocation, hologramlines));
+					Bukkit.getLogger().info("[CraftDotaS] \t" + hologramid + "\tHologram attached");
+				}
+		    }
 		}
 		
 		// Step 4 - Players.yml

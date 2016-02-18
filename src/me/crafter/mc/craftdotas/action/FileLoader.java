@@ -7,7 +7,6 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -103,7 +102,8 @@ public class FileLoader {
 					int hologramid = (int) hologram.get("id");
 					Location hologramlocation = (Location) hologram.get("location");
 					List<String> hologramlines = (List<String>) hologram.get("lines");
-					resultbuilding.addHologram(new SingleHologram(hologramid, hologramlocation, hologramlines));
+					SingleHologram singlehologram = new SingleHologram(hologramid, hologramlocation, hologramlines, resultbuilding);
+					resultbuilding.addHologram(singlehologram);
 					Bukkit.getLogger().info("[CraftDotaS] \t" + hologramid + "\tHologram attached");
 				}
 		    }

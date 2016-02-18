@@ -17,6 +17,18 @@ buildings:
     x: -70.0
     y: 24.0
     z: -70.0
+  holograms:
+  - id: 1000
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -75.0
+      y: 15.0
+      z: -75.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: []
 - id: 111
@@ -37,6 +49,18 @@ buildings:
     x: -88.0
     y: 21.0
     z: 35.0
+  holograms:
+  - id: 1110
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -91.0
+      y: 15.0
+      z: 32.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [112]
   attackmove: "FIREBALL"
@@ -60,6 +84,18 @@ buildings:
     x: -93.0
     y: 24.0
     z: -29.0
+  holograms:
+  - id: 1120
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -96.0
+      y: 15.0
+      z: -32.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "FIREBALL"
@@ -83,6 +119,18 @@ buildings:
     x: -29.0
     y: 21.0
     z: 15.0
+  holograms:
+  - id: 1210
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -32.0
+      y: 15.0
+      z: 12.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [122]
   attackmove: "FIREBALL"
@@ -106,6 +154,18 @@ buildings:
     x: -43.0
     y: 24.0
     z: -43.0
+  holograms:
+  - id: 1220
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -46.0
+      y: 15.0
+      z: -46.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "FIREBALL"
@@ -129,6 +189,18 @@ buildings:
     x: 20.0
     y: 21.0
     z: -79.0
+  holograms:
+  - id: 1310
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 17.0
+      y: 15.0
+      z: -82.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [132]
   attackmove: "FIREBALL"
@@ -152,6 +224,18 @@ buildings:
     x: -29.0
     y: 24.0
     z: -93.0
+  holograms:
+  - id: 1320
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -32.0
+      y: 15.0
+      z: -96.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "FIREBALL"
@@ -175,6 +259,18 @@ buildings:
     x: -75.0
     y: 24.0
     z: -57.0
+  holograms:
+  - id: 1410
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -78.0
+      y: 15.0
+      z: -60.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [100]
   attackmove: "FIREBALL"
@@ -198,6 +294,18 @@ buildings:
     x: -57.0
     y: 24.0
     z: -75.0
+  holograms:
+  - id: 1420
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -60.0
+      y: 15.0
+      z: -78.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [100]
   attackmove: "FIREBALL"
@@ -221,6 +329,18 @@ buildings:
     x: 70.0
     y: 24.0
     z: 70.0
+  holograms:
+  - id: 2000
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 75.0
+      y: 15.0
+      z: 75.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: []
 - id: 211
@@ -241,6 +361,18 @@ buildings:
     x: 88.0
     y: 21.0
     z: -35.0
+  holograms:
+  - id: 2110
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 91.0
+      y: 15.0
+      z: -32.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [212]
   attackmove: "FIREBALL"
@@ -264,6 +396,18 @@ buildings:
     x: 93.0
     y: 24.0
     z: 29.0
+  holograms:
+  - id: 2120
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 96.0
+      y: 15.0
+      z: 32.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "FIREBALL"
@@ -287,6 +431,18 @@ buildings:
     x: 29.0
     y: 21.0
     z: -15.0
+  holograms:
+  - id: 2210
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 32.0
+      y: 15.0
+      z: -12.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [222]
   attackmove: "FIREBALL"
@@ -310,6 +466,18 @@ buildings:
     x: 43.0
     y: 24.0
     z: 43.0
+  holograms:
+  - id: 2220
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 45.0
+      y: 15.0
+      z: 45.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "FIREBALL"
@@ -333,6 +501,18 @@ buildings:
     x: -20.0
     y: 21.0
     z: 79.0
+  holograms:
+  - id: 2310
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: -17.0
+      y: 15.0
+      z: 82.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: false
   unlocks: [232]
   attackmove: "FIREBALL"
@@ -356,6 +536,18 @@ buildings:
     x: 29.0
     y: 24.0
     z: 93.0
+  holograms:
+  - id: 2320
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 32.0
+      y: 15.0
+      z: 96.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "FIREBALL"
@@ -379,6 +571,18 @@ buildings:
     x: 75.0
     y: 24.0
     z: 57.0
+  holograms:
+  - id: 2410
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 78.0
+      y: 15.0
+      z: 60.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [200]
   attackmove: "FIREBALL"
@@ -402,6 +606,18 @@ buildings:
     x: 57.0
     y: 24.0
     z: 75.0
+  holograms:
+  - id: 2420
+    location: 
+      ==: org.bukkit.Location
+      world: rift
+      x: 60.0
+      y: 15.0
+      z: 78.0
+    lines:
+    - "name"
+    - "%hp%/%hpmax%"
+    - "%bar20%"
   invulnerable: true
   unlocks: [200]
   attackmove: "FIREBALL"

@@ -23,19 +23,8 @@ teams:
     z: 0.0
   comment: "野怪不应该有玩家入队"
 - id: 1
-  displayname: "蓝队"
-  prefix: "&b[蓝队] "
-  suffix: "&r"
-  spawn:
-    ==: org.bukkit.Location
-    world: rift
-    x: -96.0
-    y: 12.0
-    z: -96.0
-  comment: "蓝队"
-- id: 2
-  displayname: "紫队"
-  prefix: "&c[紫队] "
+  displayname: "&d紫队"
+  prefix: "&d[紫队] "
   suffix: "&r"
   spawn:
     ==: org.bukkit.Location
@@ -44,3 +33,14 @@ teams:
     y: 12.0
     z: -96.0
   comment: "紫队"
+- id: 2
+  displayname: "&9蓝队"
+  prefix: "&9[蓝队] "
+  suffix: "&r"
+  spawn:
+    ==: org.bukkit.Location
+    world: rift
+    x: -96.0
+    y: 12.0
+    z: -96.0
+  comment: "蓝队"

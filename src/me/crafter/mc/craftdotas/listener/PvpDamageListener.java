@@ -2,13 +2,14 @@ package me.crafter.mc.craftdotas.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
 
-public class PvpDamageListener {
+public class PvpDamageListener implements Listener {
 	
 	// Cancel friendly fire
 	@EventHandler

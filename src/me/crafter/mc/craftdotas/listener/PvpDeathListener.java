@@ -2,13 +2,14 @@ package me.crafter.mc.craftdotas.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
 
-public class PvpDeathListener {
+public class PvpDeathListener implements Listener {
 
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent event){

@@ -1,5 +1,6 @@
 package me.crafter.mc.craftdotas.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -7,6 +8,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import me.crafter.mc.craftdotas.object.Bounty;
@@ -14,7 +16,7 @@ import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.object.building.Building;
 
-public class TowerDamageListener {
+public class TowerDamageListener implements Listener {
 
 	// Currently using normal region detection
 	// Will try to use Metadata
@@ -23,7 +25,9 @@ public class TowerDamageListener {
 	public void onPlayerHitTower(BlockBreakEvent event){
 		Block block = event.getBlock();
 		Player player = event.getPlayer();
+		Bukkit.broadcastMessage("event");
 		if (block.getWorld() == Game.getWorld() && !(player.getGameMode() == GameMode.CREATIVE)){
+			Bukkit.broadcastMessage("c1");
 			for (int id : Building.getBuildings().keySet()){
 				Building building = Building.getBuildings().get(id);
 				Location locationmin = building.getLocations()[0];
@@ -38,23 +42,23 @@ public class TowerDamageListener {
 						// nothing?
 					} else {
 						// Handle building hp
-						boolean broken = building.damage(1);
-						if (broken){
-							building.kill();
+						boolean hit = building.damage(1);
+						if (hit){
+							// Handle animation
+							location.getWorld().spigot().playEffect(location, Effect.MAGIC_CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 24, 16);
+							location.getWorld().spigot().playEffect(location, Effect.CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 16, 16);
+							location.getWorld().spigot().playEffect(location, Effect.TILE_DUST, 0, 0, 0.8F, 0.8F, 0.8F, 0.65F, 18, 16);
+							location.getWorld().playSound(location, Sound.EXPLODE, 0.4F, 1.45F);
 						}
-						// Handle animation
-						location.getWorld().spigot().playEffect(location, Effect.MAGIC_CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 24, 16);
-						location.getWorld().spigot().playEffect(location, Effect.CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 16, 16);
-						location.getWorld().spigot().playEffect(location, Effect.TILE_DUST, 0, 0, 0.8F, 0.8F, 0.8F, 0.65F, 18, 16);
-						location.getWorld().playSound(location, Sound.EXPLODE, 0.4F, 1.45F);
+						
 						// Handle bounty
-						Bounty bounty;
-						if (broken){
-							bounty = building.getKillBounty();
-						} else {
-							bounty = building.getDamageBounty();
-						}
-						bounty.award(player);
+//						Bounty bounty;
+//						if (broken){
+//							bounty = building.getKillBounty();
+//						} else {
+//							bounty = building.getDamageBounty();
+//						}
+//						bounty.award(player);
 					}	
 					return;
 				}	

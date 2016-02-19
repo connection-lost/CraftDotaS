@@ -22,9 +22,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -72.0
+      x: -71.5
       y: 15.0
-      z: -72.0
+      z: -71.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -54,9 +54,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -91.0
-      y: 15.0
-      z: 32.0
+      x: -88.5
+      y: 12.0
+      z: 34.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -89,9 +89,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -96.0
+      x: -95.5
       y: 15.0
-      z: -32.0
+      z: -28.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -113,20 +113,20 @@ buildings:
     world: rift
     x: -35.0
     y: 6.0
-    z: 9.0
+    z: -9.0
   - ==: org.bukkit.Location
     world: rift
     x: -29.0
     y: 21.0
-    z: 15.0
+    z: -15.0
   holograms:
   - id: 1210
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -32.0
-      y: 15.0
-      z: 12.0
+      x: -29.5
+      y: 12.0
+      z: -9.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -159,9 +159,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -46.0
+      x: -43.5
       y: 15.0
-      z: -46.0
+      z: -43.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -194,9 +194,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 17.0
-      y: 15.0
-      z: -82.0
+      x: 19.5
+      y: 12.0
+      z: -83.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -229,9 +229,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -32.0
+      x: -28.5
       y: 15.0
-      z: -96.0
+      z: -95.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -244,8 +244,8 @@ buildings:
 - id: 141
   type: "tower"
   side: 1
-  health: 75
-  maxhealth: 75
+  health: 125
+  maxhealth: 125
   healthregen: 0
   displayname: "&d紫队基地左塔"
   locations:
@@ -264,9 +264,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -78.0
+      x: -75.5
       y: 15.0
-      z: -60.0
+      z: -57.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -279,8 +279,8 @@ buildings:
 - id: 142
   type: "tower"
   side: 1
-  health: 100
-  maxhealth: 100
+  health: 125
+  maxhealth: 125
   healthregen: 0
   displayname: "&d紫队基地右塔"
   locations:
@@ -299,9 +299,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -60.0
+      x: -57.5
       y: 15.0
-      z: -78.0
+      z: -75.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -334,9 +334,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 72.0
+      x: 72.5
       y: 15.0
-      z: 72.0
+      z: 72.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -366,9 +366,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 91.0
-      y: 15.0
-      z: -32.0
+      x: 89.5
+      y: 12.0
+      z: -33.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -401,9 +401,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 96.0
+      x: 96.5
       y: 15.0
-      z: 32.0
+      z: 29.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -425,20 +425,20 @@ buildings:
     world: rift
     x: 35.0
     y: 6.0
-    z: -9.0
+    z: 9.0
   - ==: org.bukkit.Location
     world: rift
     x: 29.0
     y: 21.0
-    z: -15.0
+    z: 15.0
   holograms:
   - id: 2210
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 32.0
-      y: 15.0
-      z: -12.0
+      x: 30.5
+      y: 12.0
+      z: 10.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -471,9 +471,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 45.0
+      x: 44.5
       y: 15.0
-      z: 45.0
+      z: 44.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -506,9 +506,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: -17.0
-      y: 15.0
-      z: 82.0
+      x: -18.5
+      y: 12.0
+      z: 84.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -541,9 +541,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 32.0
+      x: 29.5
       y: 15.0
-      z: 96.0
+      z: 96.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -556,8 +556,8 @@ buildings:
 - id: 241
   type: "tower"
   side: 2
-  health: 75
-  maxhealth: 75
+  health: 125
+  maxhealth: 125
   healthregen: 0
   displayname: "&9蓝队基地左塔"
   locations:
@@ -576,9 +576,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 78.0
+      x: 76.5
       y: 15.0
-      z: 60.0
+      z: 58.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"
@@ -591,8 +591,8 @@ buildings:
 - id: 242
   type: "tower"
   side: 2
-  health: 100
-  maxhealth: 100
+  health: 125
+  maxhealth: 125
   healthregen: 0
   displayname: "&9蓝队基地右塔"
   locations:
@@ -611,9 +611,9 @@ buildings:
     location: 
       ==: org.bukkit.Location
       world: rift
-      x: 60.0
+      x: 58.5
       y: 15.0
-      z: 78.0
+      z: 76.5
     lines:
     - "%name%"
     - "%hp%/%hpmax%"

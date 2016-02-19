@@ -50,7 +50,11 @@ public class SingleHologram {
 	
 	public void update(){
 		if (host instanceof Building){
-			// Handle building hologram
+			int i = 0;
+			for (Hologram hologram : holograms){
+				hologram.setText(placeholderBuilding(lines.get(i)));
+				i ++;
+			}
 		}
 	}
 	
@@ -73,24 +77,35 @@ public class SingleHologram {
 			line = line.replace("%hpmax%", (int)building.getMaxHealth() + "");
 		}
 		if (line.contains("%bar20%")){
-			line = line.replace("%bar20%", getBarHealth(building.getHealth(), building.getMaxHealth(), 20));
+			line = line.replace("%bar20%", getBarHealth(building, 20));
 		}
 		
 		return line;
 	}
 	
-	public String getBarHealth(double hp, double hpmax, int length){
+	public String getBarHealth(Building building, int length){
+		double hp = building.getHealth();
+		double hpmax = building.getMaxHealth();
 		String ret = "";
-		double percent = hp / hpmax;
-		if (percent > 0.6){
-			ret += ChatColor.GREEN;
-		} else if (percent > 0.3){
-			ret += ChatColor.YELLOW;
+		if (building.isInvulnerable()){
+			ret += ChatColor.WHITE;
+			ret += StringUtils.repeat("¨~", length);
+		} else if (building.isDestroyed()){
+			ret += ChatColor.BLACK;
+			ret += StringUtils.repeat("¨~", length);
 		} else {
-			ret += ChatColor.RED;
+			double percent = hp / hpmax;
+			if (percent > 0.6){
+				ret += ChatColor.GREEN;
+			} else if (percent > 0.3){
+				ret += ChatColor.YELLOW;
+			} else {
+				ret += ChatColor.RED;
+			}
+			ret += StringUtils.repeat("¨~", (int)(percent*length));
+			ret += ChatColor.GRAY + StringUtils.repeat("¨~", length-((int)(percent*length)));
 		}
-		ret += StringUtils.repeat("¨~", (int)(percent*length));
-		ret += ChatColor.GRAY + StringUtils.repeat("¨~", length-((int)(percent*length)));
+		
 		return ret;
 	}
 	

@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import me.crafter.mc.craftdotas.object.Bounty;
 import me.crafter.mc.craftdotas.object.SingleHologram;
+import net.md_5.bungee.api.ChatColor;
 
 public class Building {
 
@@ -92,12 +94,18 @@ public class Building {
 	}
 	
 	public boolean damage(double damage){
+		if (isInvulnerable()) return false;
 		health = Math.max(0, health - damage);
-		if (health < 0.01){
-			destroyed = true;
-			return true;
+		for (SingleHologram singlehologram : holograms){
+			singlehologram.update();
 		}
-		else return false;
+		if (isDestroyed()){
+			return false;
+		} else if (health < 0.01){
+			this.kill();
+			health = 0D;
+		}
+		return true;
 	}
 	
 	public void tick(){
@@ -106,6 +114,12 @@ public class Building {
 	
 	public void kill(){
 		setDestroyed(true);
+		for (int unlock : unlocks){
+			if (buildings.containsKey(unlock)){
+				buildings.get(unlock).setInvulnerable(false);
+			}
+		}
+		Bukkit.broadcastMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RESET + getDisplayName() + ChatColor.RED + " ±»´Ý»ÙÁË¡£¡£¡£");
 		// TODO Handle animations and such
 	}
 

@@ -18,7 +18,9 @@ public class Game {
 	private static int start;
 	private static int end;
 	private static int towinscore;
+	private static boolean loaded = false;
 	public static BukkitTask task;
+	
 	
 	public Game(World world_, int start_, int end_, int towinscore_){
 		world = world_;
@@ -27,6 +29,7 @@ public class Game {
 		end = end_;
 		towinscore = towinscore_;
 		ison = false;
+		loaded = true;
 	}
 
 	public static void ready(){
@@ -48,6 +51,7 @@ public class Game {
 			task.cancel();
 			task = null;
 		}
+		loaded = false;
 	}
 
 	//getters
@@ -59,6 +63,7 @@ public class Game {
 	public static int getStart(){return start;}
 	public static int getEnd(){return end;}
 	public static int getToWinScore(){return towinscore;}
+	public static boolean isLoaded() {return loaded;}
 
 	//setters
 	public static void tickAdd(){

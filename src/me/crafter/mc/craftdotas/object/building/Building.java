@@ -92,6 +92,11 @@ public class Building {
 			hologram.update();
 		}
 	}
+	public void refreshHologram(){
+		for (SingleHologram hologram : holograms){
+			hologram.refresh();
+		}
+	}
 	
 	public boolean damage(double damage){
 		if (isInvulnerable()) return false;
@@ -117,8 +122,10 @@ public class Building {
 		for (int unlock : unlocks){
 			if (buildings.containsKey(unlock)){
 				buildings.get(unlock).setInvulnerable(false);
+				buildings.get(unlock).updateHologram();
 			}
 		}
+		updateHologram();
 		Bukkit.broadcastMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RESET + getDisplayName() + ChatColor.RED + " ±ª¥›ªŸ¡À°£°£°£");
 		// TODO Handle animations and such
 	}

@@ -8,12 +8,14 @@ import org.bukkit.command.CommandSender;
 import me.crafter.mc.craftdotas.action.FileLoader;
 import me.crafter.mc.craftdotas.listener.InventoryListener;
 import me.crafter.mc.craftdotas.listener.ModifyWorldListener;
+import me.crafter.mc.craftdotas.listener.PlayerChatFormatListener;
 import me.crafter.mc.craftdotas.listener.PreventBlockChangeListener;
 import me.crafter.mc.craftdotas.listener.PvpDamageListener;
 import me.crafter.mc.craftdotas.listener.PvpDeathListener;
 import me.crafter.mc.craftdotas.listener.TowerDamageListener;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.building.Building;
+import me.crafter.mc.craftdotas.utils.PlayerUtils;
 import net.md_5.bungee.api.ChatColor;
 
 public class DotaCommand implements CommandExecutor {
@@ -46,6 +48,7 @@ public class DotaCommand implements CommandExecutor {
     		Bukkit.getServer().getPluginManager().registerEvents(new PvpDamageListener(), CraftDotaS.plugin);
     		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
     		Bukkit.getServer().getPluginManager().registerEvents(new TowerDamageListener(), CraftDotaS.plugin);
+    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerChatFormatListener(), CraftDotaS.plugin);
     		break;
     	case "start":
     		if (Game.task == null){
@@ -82,6 +85,17 @@ public class DotaCommand implements CommandExecutor {
     		} catch (Exception ex){
     			showUsage(sender);
     			return true;
+    		}
+    		break;
+    	case "join":
+    		if (args.length != 3){
+    			showUsage(sender);
+    		} else {
+    			try {
+        			PlayerUtils.joinTeam(args[1], Integer.parseInt(args[2]));
+    			} catch (Exception ex){
+    				showUsage(sender);
+    			}
     		}
     		break;
     	default:

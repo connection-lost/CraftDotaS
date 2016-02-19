@@ -9,9 +9,6 @@ flow:
 - tick: -1701
   action: "BATTLEFIELD_GATE_CLOSE"
   content: ""
-- tick: -1700
-  action: "BATTLEFIELD_PLAYER_READY"
-  content: ""
 - tick: -1500
   action: "BATTLEFIELD_GATE_OPEN"
   content: ""

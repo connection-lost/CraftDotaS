@@ -58,11 +58,20 @@ public class SingleHologram {
 		}
 	}
 	
+	public void refresh(){
+		for (Hologram hologram : holograms){
+			if (hologram.isSpawned()){
+				hologram.despawn();
+				hologram.spawn();
+			}
+		}
+	}
+	
 	public void destroy(){
-		holograms = new ArrayList<Hologram>();
 		for (Hologram hologram : holograms){
 			hologram.despawn();
 		}
+		holograms = new ArrayList<Hologram>();
 	}
 	
 	public String placeholderBuilding(String line){

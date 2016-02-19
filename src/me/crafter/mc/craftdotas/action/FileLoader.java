@@ -63,7 +63,7 @@ public class FileLoader {
 		for (Map<?, ?> building : buildings.getMapList("buildings")){
 			int id = (int) building.get("id");
 			String type = (String) building.get("type");
-			int side = (int) building.get("id");
+			int side = (int) building.get("side");
 			double health = (int) building.get("health");
 			double maxhealth = (int) building.get("maxhealth");
 			double healthregen = (int) building.get("healthregen");

@@ -69,6 +69,10 @@ public class Team {
 		return members;
 	}
 	
+	public void addPlayer(Player player){
+		playerteams.put(player, this);
+	}
+	
 	public void setBounty(Bounty bounty_) {bounty = bounty_;}
 
 }

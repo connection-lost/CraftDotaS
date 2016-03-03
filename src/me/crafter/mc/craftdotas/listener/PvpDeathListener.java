@@ -23,7 +23,9 @@ public class PvpDeathListener implements Listener {
 					Team damagedteam = Team.getPlayerTeam(damaged);
 					Team damagerteam = Team.getPlayerTeam(damager);
 					if (damagedteam != damagerteam){
-						damagedteam.getBounty().award(damager);
+						if (damagedteam.getBounty() != null){
+							damagedteam.getBounty().award(damager, damaged.getLocation());
+						}
 					}
 				}
 			}

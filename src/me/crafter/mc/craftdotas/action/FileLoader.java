@@ -1,15 +1,19 @@
 package me.crafter.mc.craftdotas.action;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.ItemStack;
 
+import me.crafter.mc.craftdotas.object.Bounty;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.SingleHologram;
 import me.crafter.mc.craftdotas.object.Team;
@@ -57,7 +61,7 @@ public class FileLoader {
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
 		}
 		
-		// Step 3 - Building.yml
+		// Step 3 - Buildings.yml
 		Bukkit.getLogger().info("[CraftDotaS] Loading Buildings.yml...");
 		FileConfiguration buildings = YamlConfiguration.loadConfiguration(new File(folder, "Buildings.yml"));
 		for (Map<?, ?> building : buildings.getMapList("buildings")){
@@ -115,6 +119,43 @@ public class FileLoader {
 		
 		// Step 6 - Creeps.yml
 		
+		// Step 7 - Bounty.yml
+		Bukkit.getLogger().info("[CraftDotaS] Loading Bounty.yml...");
+		FileConfiguration bounties = YamlConfiguration.loadConfiguration(new File(folder, "Bounty.yml"));
+		for (Map<?, ?> bounty : bounties.getMapList("bounties")){
+			String type = (String) bounty.get("type");
+			int id, score;
+			boolean scale, dropitemonground;
+			List<ItemStack> itemstacks;
+			switch (type){
+			case "buildingdestroy":
+				id = (int) bounty.get("id");
+				score = (int) bounty.get("score");
+				itemstacks = (List<ItemStack>) bounties.get("items");
+				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).withItems(itemstacks));
+				break;
+			case "buildingdamage":
+				id = (int) bounty.get("id");
+				score = (int) bounty.get("score");
+				itemstacks = (List<ItemStack>) bounties.get("items");
+				scale = (boolean) bounties.getBoolean("scale");
+				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).scale(scale).withItems(itemstacks));
+				break;
+			case "playerkill":
+				id = (int) bounty.get("id");
+				score = (int) bounty.get("score");
+				itemstacks = (List<ItemStack>) bounties.get("items");
+				scale = (boolean) bounties.getBoolean("scale");
+				dropitemonground = (boolean) bounties.getBoolean("dropitemonground");
+				Team.getTeam(id).setBounty(Bounty.start().withScore(score).dropItemOnGround(dropitemonground).scale(scale).withItems(itemstacks));
+				break;
+			}
+		}
+		ItemStack item = new ItemStack(Material.EMERALD);
+		List<ItemStack> items = new ArrayList<ItemStack>();
+		items.add(item);
+		bounties.set("itemtest", items);
+		bounties.save(new File(folder, "Bounty.yml"));
 	}
 	
 }

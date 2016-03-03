@@ -9,7 +9,7 @@ import org.bukkit.command.TabCompleter;
 
 public class DotaCommandCompleter implements TabCompleter {
 	
-	String[] arg1 = {"tick","start","end","version"};
+	String[] arg1 = {"tick","start","load","stop","end","version"};
 
 	@Override
 	public List<String> onTabComplete(CommandSender sender, Command cmd, String cmdlabel, String[] args) {

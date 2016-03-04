@@ -1,13 +1,14 @@
 package me.crafter.mc.craftdotas.object;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Location;
 
-import de.inventivegames.hologram.Hologram;
-import de.inventivegames.hologram.HologramAPI;
+import com.gmail.filoghost.holographicdisplays.api.Hologram;
+import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
+
+import me.crafter.mc.craftdotas.CraftDotaS;
 import me.crafter.mc.craftdotas.object.building.Building;
 import net.md_5.bungee.api.ChatColor;
 
@@ -17,7 +18,7 @@ public class SingleHologram {
 	private Location location;
 	private List<String> lines;
 	private Object host;
-	private List<Hologram> holograms = new ArrayList<Hologram>();
+	private Hologram hologram;
 	
 	public SingleHologram(int id_, Location location_, List<String> lines_, Object host_){
 		id = id_;
@@ -34,44 +35,34 @@ public class SingleHologram {
 	public void setHost(Object object){host = object;}
 	
 	public void create(){
-		holograms = new ArrayList<Hologram>();
 		if (host instanceof Building){
-			Hologram hologrambase = HologramAPI.createHologram(location, placeholderBuilding(lines.get(0)));
-			hologrambase.spawn();
-			holograms.add(hologrambase);
-			for (int i = 1; i < lines.size(); i++){
-				Hologram hologramnew = hologrambase.addLineBelow(placeholderBuilding(lines.get(i)));
-				//hologramnew.spawn(); does not need to spawn why = =
-				holograms.add(hologramnew);
-				hologrambase = hologramnew;
+			hologram = HologramsAPI.createHologram(CraftDotaS.plugin, location);
+			for (String line : lines){
+				hologram.appendTextLine(placeholderBuilding(line));
 			}
 		}
 	}
 	
 	public void update(){
 		if (host instanceof Building){
-			int i = 0;
-			for (Hologram hologram : holograms){
-				hologram.setText(placeholderBuilding(lines.get(i)));
-				i ++;
+			hologram.clearLines();
+			for (String line : lines){
+				hologram.appendTextLine(placeholderBuilding(line));
 			}
 		}
 	}
 	
 	public void refresh(){
-		for (Hologram hologram : holograms){
-			if (hologram.isSpawned()){
-				hologram.despawn();
-				hologram.spawn();
+		if (host instanceof Building){
+			hologram.clearLines();
+			for (String line : lines){
+				hologram.appendTextLine(placeholderBuilding(line));
 			}
 		}
 	}
 	
 	public void destroy(){
-		for (Hologram hologram : holograms){
-			hologram.despawn();
-		}
-		holograms = new ArrayList<Hologram>();
+		hologram.delete();
 	}
 	
 	public String placeholderBuilding(String line){
@@ -88,7 +79,6 @@ public class SingleHologram {
 		if (line.contains("%bar20%")){
 			line = line.replace("%bar20%", getBarHealth(building, 20));
 		}
-		
 		return line;
 	}
 	

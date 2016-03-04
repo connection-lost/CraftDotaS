@@ -3,6 +3,9 @@ package me.crafter.mc.craftdotas;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.gmail.filoghost.holographicdisplays.api.Hologram;
+import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
+
 import me.crafter.mc.craftdotas.listener.InventoryListener;
 
 public class CraftDotaS extends JavaPlugin {
@@ -17,7 +20,11 @@ public class CraftDotaS extends JavaPlugin {
     }
 	
     public void onDisable(){
-    	
+    	for (Hologram hologram : HologramsAPI.getHolograms(this)){
+    		hologram.clearLines();
+    		hologram.delete();
+    		Bukkit.getLogger().info("Remove hologram " + hologram.toString());
+    	}
     }
 	
 }

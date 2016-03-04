@@ -1,6 +1,7 @@
 name: CraftDotaS
 main: me.crafter.mc.craftdotas.CraftDotaS
 author: connection_lost
+depend: [HolographicDisplays]
 version: indev-0.1
 description: >
              0w0

@@ -15,6 +15,8 @@ public class Team {
 	private String displayname;
 	private String prefix;
 	private String suffix;
+	private String chatprefix;
+	private String chatsuffix;
 	private Location spawnlocation;
 	private Bounty bounty;
 	private ItemStack[] startingarmor;
@@ -23,20 +25,24 @@ public class Team {
 	private static Map<Player, Team> playerteams = new HashMap<Player, Team>();
 	private static Map<Integer, Team> teams = new HashMap<Integer, Team>();
 	
-	public Team(int id_, String displayname_, String prefix_, String suffix_, Location spawnlocation_){
+	public Team(int id_, String displayname_, String prefix_, String suffix_, String chatprefix_, String chatsuffix_, Location spawnlocation_){
 		id = id_;
 		displayname = displayname_;
 		prefix = prefix_;
 		suffix = suffix_;
+		chatprefix = chatprefix_;
+		chatsuffix = chatsuffix_;
 		spawnlocation = spawnlocation_;
 		teams.put(id, this);
 	}
 	
-	public Team(int id_, String displayname_, String prefix_, String suffix_, Location spawnlocation_, ItemStack[] startingarmor_, ItemStack[] startingitem_){
+	public Team(int id_, String displayname_, String prefix_, String suffix_, String chatprefix_, String chatsuffix_, Location spawnlocation_, ItemStack[] startingarmor_, ItemStack[] startingitem_){
 		id = id_;
 		displayname = displayname_;
 		prefix = prefix_;
 		suffix = suffix_;
+		chatprefix = chatprefix_;
+		chatsuffix = chatsuffix_;
 		spawnlocation = spawnlocation_;
 		teams.put(id, this);
 		startingarmor = startingarmor_;
@@ -47,6 +53,8 @@ public class Team {
 	public String getDisplayName() {return displayname;}
 	public String getPrefix() {return prefix;}
 	public String getSuffix() {return suffix;}
+	public String getChatPrefix() {return chatprefix;}
+	public String getChatSuffix() {return chatsuffix;}
 	public Location getSpawnLocation() {return spawnlocation;}
 	public Bounty getBounty() {return bounty;}
 	
@@ -81,6 +89,14 @@ public class Team {
 			}
 		}
 		return members;
+	}
+	
+	public static List<Team> getTeams(){
+		List<Team> retteams = new ArrayList<Team>();
+		for (int i : teams.keySet()){
+			retteams.add(teams.get(i));
+		}
+		return retteams;
 	}
 	
 	public void addPlayer(Player player){

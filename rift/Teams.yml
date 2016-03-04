@@ -1,8 +1,10 @@
 teams:
 - id: -1
   displayname: "观众"
-  prefix: "&7[观众] "
+  prefix: "&7"
   suffix: "&r"
+  chat_prefix: "&7[观众] "
+  chat_suffix: "&r"
   default: true
   spawn: 
     ==: org.bukkit.Location
@@ -67,8 +69,10 @@ teams:
   comment: "无队伍或观众"
 - id: 0
   displayname: "野怪"
-  prefix: "&f[野怪] "
+  prefix: "&f"
   suffix: "&r"
+  chat_prefix: "&f[野怪] "
+  chat_suffix: "&r"
   spawn:
     ==: org.bukkit.Location
     world: rift
@@ -78,8 +82,10 @@ teams:
   comment: "野怪不应该有玩家入队"
 - id: 1
   displayname: "&d紫队"
-  prefix: "&d[紫队] "
+  prefix: "&d"
   suffix: "&r"
+  chat_prefix: "&d[紫队] "
+  chat_suffix: "&r"
   spawn:
     ==: org.bukkit.Location
     world: rift
@@ -157,8 +163,10 @@ teams:
   comment: "紫队成员"
 - id: 2
   displayname: "&9蓝队"
-  prefix: "&9[蓝队] "
+  prefix: "&9"
   suffix: "&r"
+  chat_prefix: "&9[蓝队] "
+  chat_suffix: "&r"
   spawn:
     ==: org.bukkit.Location
     world: rift

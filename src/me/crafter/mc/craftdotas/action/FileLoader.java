@@ -131,31 +131,26 @@ public class FileLoader {
 			case "buildingdestroy":
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
-				itemstacks = (List<ItemStack>) bounties.get("items");
+				itemstacks = (List<ItemStack>) bounty.get("items");
 				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).withItems(itemstacks));
 				break;
 			case "buildingdamage":
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
-				itemstacks = (List<ItemStack>) bounties.get("items");
-				scale = (boolean) bounties.getBoolean("scale");
+				itemstacks = (List<ItemStack>) bounty.get("items");
+				scale = (boolean) bounty.get("scale");
 				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).scale(scale).withItems(itemstacks));
 				break;
 			case "playerkill":
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
-				itemstacks = (List<ItemStack>) bounties.get("items");
-				scale = (boolean) bounties.getBoolean("scale");
-				dropitemonground = (boolean) bounties.getBoolean("dropitemonground");
+				itemstacks = (List<ItemStack>) bounty.get("items");
+				scale = (boolean) bounty.get("scale");
+				dropitemonground = (boolean) bounty.get("dropitemonground");
 				Team.getTeam(id).setBounty(Bounty.start().withScore(score).dropItemOnGround(dropitemonground).scale(scale).withItems(itemstacks));
 				break;
 			}
 		}
-		ItemStack item = new ItemStack(Material.EMERALD);
-		List<ItemStack> items = new ArrayList<ItemStack>();
-		items.add(item);
-		bounties.set("itemtest", items);
-		bounties.save(new File(folder, "Bounty.yml"));
 	}
 	
 }

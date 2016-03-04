@@ -7,8 +7,10 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import me.crafter.mc.craftdotas.object.Bounty;
+import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.SingleHologram;
 import net.md_5.bungee.api.ChatColor;
 
@@ -40,7 +42,9 @@ public class Building {
 	private Bounty damagebounty;
 	private Bounty killbounty;
 	// Hologram
-	private List<SingleHologram> holograms = new ArrayList<SingleHologram>();	
+	private List<SingleHologram> holograms = new ArrayList<SingleHologram>();
+	// Center XZ
+	private double[] centerxz;
 
 	public Building(int side_, int id_, double health_, double maxhealth_, double healthregen_, boolean destroyed_, 
 			String displayname_, Location[] locations_, boolean invulnerable_, int[] unlocks_, int damagescore_, int destroyscore_){
@@ -55,6 +59,9 @@ public class Building {
 		invulnerable = invulnerable_;
 		unlocks = unlocks_;
 		buildings.put(id, this);
+		centerxz = new double[2];
+		centerxz[0] = (locations[0].getX() + locations[1].getX()) / 2;
+		centerxz[1] = (locations[0].getZ() + locations[1].getZ()) / 2;
 	}
 		
 	public int getSide() {return side;}
@@ -70,12 +77,33 @@ public class Building {
 	public static Map<Integer, Building> getBuildings() {return buildings;}
 	public Bounty getDamageBounty() {return damagebounty;}
 	public Bounty getKillBounty() {return killbounty;}
+	
+	public List<Player> getNearbyPlayers(double distance) {
+		List<Player> nearby = new ArrayList<Player>();
+		double distancesquared = distance * distance;
+		for (Player player : Game.getWorld().getPlayers()){
+			Location location = player.getLocation();
+			double playerxdiff = location.getX() - centerxz[0];
+			double playerzdiff = location.getZ() - centerxz[1];
+			if (playerxdiff * playerxdiff + playerzdiff * playerzdiff < distancesquared){
+				nearby.add(player);
+			}
+		}
+		return nearby;
+	}
 
 	public void setHealth(double newhealth) {health = newhealth;}
 	public void setDestroyed(boolean newdestroyed) {destroyed = newdestroyed;}
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
 	public void setDamageBounty(Bounty bounty) {damagebounty = bounty;}
 	public void setKillBounty(Bounty bounty) {killbounty = bounty;}
+	
+	public static void tickAll(){
+		for (int bid : buildings.keySet()){
+			buildings.get(bid).tick();
+		}
+	}
+	
 	public void addHologram(SingleHologram hologram){
 		hologram.setHost(this);
 		holograms.add(hologram);

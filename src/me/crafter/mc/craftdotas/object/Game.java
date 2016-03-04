@@ -1,5 +1,6 @@
 package me.crafter.mc.craftdotas.object;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
@@ -12,7 +13,7 @@ import me.crafter.mc.craftdotas.task.GameTick;
 public class Game {
 
 	private static World world;
-	private static Map<Integer, Integer> scores;
+	private static Map<Integer, Integer> scores = new HashMap<Integer, Integer>();
 	private static int tick;
 	private static boolean ison; // Whether game is running, it will turn off if game is finished
 	private static int start;
@@ -20,7 +21,6 @@ public class Game {
 	private static int towinscore;
 	private static boolean loaded = false;
 	public static BukkitTask task;
-	
 	
 	public Game(World world_, int start_, int end_, int towinscore_){
 		world = world_;
@@ -80,6 +80,11 @@ public class Game {
 	
 	public static void addScore(int side, int add){
 		scores.put(side, scores.get(side) + add);
+	}
+	
+	public static void removeAll(){
+		scores = new HashMap<Integer, Integer>();
+		loaded = false;
 	}
 	
 	

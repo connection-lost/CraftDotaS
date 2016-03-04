@@ -55,19 +55,21 @@ public class FileLoader {
 			String displayname = ChatColor.translateAlternateColorCodes('&', (String) team.get("displayname"));
 			String prefix = ChatColor.translateAlternateColorCodes('&', (String) team.get("prefix"));
 			String suffix = ChatColor.translateAlternateColorCodes('&', (String) team.get("suffix"));
+			String chatprefix = ChatColor.translateAlternateColorCodes('&', (String) team.get("chat_prefix"));
+			String chatsuffix = ChatColor.translateAlternateColorCodes('&', (String) team.get("chat_suffix"));
 			Location spawn = (Location) team.get("spawn");
-			new Team(id, displayname, prefix, suffix, spawn);
 			List<ItemStack> startingarmorarray = (List<ItemStack>) team.get("starting_armor");
 			List<ItemStack> startingitemarray = (List<ItemStack>) team.get("starting_item");
 			if (startingarmorarray != null && startingitemarray != null){
 				ItemStack[] startingarmor = startingarmorarray.toArray(new ItemStack[startingarmorarray.size()]);
 				ItemStack[] startingitem = startingitemarray.toArray(new ItemStack[startingitemarray.size()]);
-				new Team(id, displayname, prefix, suffix, spawn, startingarmor, startingitem);
+				new Team(id, displayname, prefix, suffix, chatprefix, chatsuffix, spawn, startingarmor, startingitem);
 				Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname + "\tWith items");
 			} else {
-				new Team(id, displayname, prefix, suffix, spawn);
+				new Team(id, displayname, prefix, suffix, chatprefix, chatsuffix, spawn);
 				Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
 			}
+			Game.setScore(id, 0);
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
 		}
 		// Step 3 - Buildings.yml
@@ -160,6 +162,12 @@ public class FileLoader {
 				break;
 			}
 		}
+		// Step 8 - HUD
+		Bukkit.getLogger().info("[CraftDotaS] Loading Hud.yml...");
+		FileConfiguration hud = YamlConfiguration.loadConfiguration(new File(folder, "Hud.yml"));
+		String actionbar = ChatColor.translateAlternateColorCodes('&', hud.getString("action_bar"));
+		new HudAction(actionbar);
+		Bukkit.getLogger().info("[CraftDotaS] ActionBar: " + actionbar);
 		// test
 //		FileConfiguration itemtest = new YamlConfiguration();
 //		for (Player p : Bukkit.getOnlinePlayers()){

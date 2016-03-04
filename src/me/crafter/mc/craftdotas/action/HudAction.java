@@ -5,47 +5,50 @@ import org.bukkit.entity.Player;
 import com.connorlinfoot.actionbarapi.ActionBarAPI;
 
 import me.crafter.mc.craftdotas.object.Game;
-import net.md_5.bungee.api.ChatColor;
+import me.crafter.mc.craftdotas.object.Team;
+import me.crafter.mc.craftdotas.utils.FormatUtils;
 
 public class HudAction {
 	
+	private static String actionbar = "-";
+	private static int cooldown = 2;
+	
+	public HudAction(String actionbar_){
+		actionbar = actionbar_;
+	}
+
+	public static String getActionBar(){return actionbar;}
+	public static void setActionBar(String actionbar_){actionbar = actionbar_;}
 	
 	public static void execute(int tick){
-		for (Player player : Game.getWorld().getPlayers()){
-			ActionBarAPI.sendActionBar(player, getDebugMessage(tick));
+		if (cooldown <= 0){
+			for (Player player : Game.getWorld().getPlayers()){
+				ActionBarAPI.sendActionBar(player, getMessage(getActionBar(), tick));
+			}
+			cooldown = 5;
+		} else {
+			cooldown --;
 		}
+		
 	}
 
 	public static String getDebugMessage(int tick){
 		String message = "";
-		if (Game.isOn()){
-			message += ChatColor.GREEN;
-		} else {
-			message += ChatColor.RED;
-		}
-		message += "Time: " + tickToMinuteSecond(tick) + "(" + tick + ")";
+		message += FormatUtils.gameOn();
+		message += "Time: " + FormatUtils.tickToMinuteSecond(tick) + "(" + tick + ")";
 		return message;
 	}
 
-	public static String tickToMinuteSecond(int tick){
-		String time = "";
-		if (tick < 0){
-			tick -= 20;
+	public static String getMessage(String message, int tick){
+		for (Team team : Team.getTeams()){
+			message = message.replace("{teamdisplayname" + team.getId() + "}", team.getDisplayName());
+			message = message.replace("{teamprefix" + team.getId() + "}", team.getPrefix());
+			message = message.replace("{teamsuffix" + team.getId() + "}", team.getSuffix());
+			message = message.replace("{teamscore" + team.getId() + "}", Game.getScore(team.getId()) + "");
 		}
-		if (tick < 0 && tick > -1200){
-			time += "-";
-		}
-		time += (tick / 1200);
-		time += ":";
-		int second = ((tick / 20) % 60);
-		if (second < 0){
-			second = 0 - second;
-		}
-		if (second < 10){
-			time += "0";
-		}
-		time += second;
-		return time;
+		message = message.replace("{time}", FormatUtils.tickToMinuteSecond(tick));
+		return message;
 	}
+	
 	
 }

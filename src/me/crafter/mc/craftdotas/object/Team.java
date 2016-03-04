@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Team {
 
@@ -16,6 +17,8 @@ public class Team {
 	private String suffix;
 	private Location spawnlocation;
 	private Bounty bounty;
+	private ItemStack[] startingarmor;
+	private ItemStack[] startingitem;
 	
 	private static Map<Player, Team> playerteams = new HashMap<Player, Team>();
 	private static Map<Integer, Team> teams = new HashMap<Integer, Team>();
@@ -27,6 +30,17 @@ public class Team {
 		suffix = suffix_;
 		spawnlocation = spawnlocation_;
 		teams.put(id, this);
+	}
+	
+	public Team(int id_, String displayname_, String prefix_, String suffix_, Location spawnlocation_, ItemStack[] startingarmor_, ItemStack[] startingitem_){
+		id = id_;
+		displayname = displayname_;
+		prefix = prefix_;
+		suffix = suffix_;
+		spawnlocation = spawnlocation_;
+		teams.put(id, this);
+		startingarmor = startingarmor_;
+		startingitem = startingitem_;
 	}
 	
 	public int getId() {return id;}
@@ -71,6 +85,8 @@ public class Team {
 	
 	public void addPlayer(Player player){
 		playerteams.put(player, this);
+		player.getInventory().setArmorContents(startingarmor);
+		player.getInventory().setContents(startingitem);
 	}
 	
 	public void setBounty(Bounty bounty_) {bounty = bounty_;}

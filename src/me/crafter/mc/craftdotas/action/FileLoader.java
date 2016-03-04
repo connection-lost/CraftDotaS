@@ -1,16 +1,15 @@
 package me.crafter.mc.craftdotas.action;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import me.crafter.mc.craftdotas.object.Bounty;
@@ -58,9 +57,19 @@ public class FileLoader {
 			String suffix = ChatColor.translateAlternateColorCodes('&', (String) team.get("suffix"));
 			Location spawn = (Location) team.get("spawn");
 			new Team(id, displayname, prefix, suffix, spawn);
+			List<ItemStack> startingarmorarray = (List<ItemStack>) team.get("starting_armor");
+			List<ItemStack> startingitemarray = (List<ItemStack>) team.get("starting_item");
+			if (startingarmorarray != null && startingitemarray != null){
+				ItemStack[] startingarmor = startingarmorarray.toArray(new ItemStack[startingarmorarray.size()]);
+				ItemStack[] startingitem = startingitemarray.toArray(new ItemStack[startingitemarray.size()]);
+				new Team(id, displayname, prefix, suffix, spawn, startingarmor, startingitem);
+				Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname + "\tWith items");
+			} else {
+				new Team(id, displayname, prefix, suffix, spawn);
+				Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
+			}
 			Bukkit.getLogger().info("[CraftDotaS] \t" + id + "\t" + displayname);
 		}
-		
 		// Step 3 - Buildings.yml
 		Bukkit.getLogger().info("[CraftDotaS] Loading Buildings.yml...");
 		FileConfiguration buildings = YamlConfiguration.loadConfiguration(new File(folder, "Buildings.yml"));
@@ -151,6 +160,13 @@ public class FileLoader {
 				break;
 			}
 		}
+		// test
+//		FileConfiguration itemtest = new YamlConfiguration();
+//		for (Player p : Bukkit.getOnlinePlayers()){
+//			itemtest.set(p.getName() + "_armor", p.getInventory().getArmorContents());
+//			itemtest.set(p.getName() + "_item", p.getInventory().getContents());
+//		}
+//		itemtest.save(new File(folder, "ItemTest.yml"));
 	}
 	
 }

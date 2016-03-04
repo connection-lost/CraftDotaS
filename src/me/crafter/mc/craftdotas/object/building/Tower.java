@@ -11,8 +11,8 @@ import org.bukkit.entity.LargeFireball;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
+import me.crafter.mc.craftdotas.task.ProjectileReaim;
 
 public class Tower extends Building{
 	
@@ -62,7 +62,7 @@ public class Tower extends Building{
 	@Override
 	public void tick(){
 		super.tick();
-		if (isAttackReady()){
+		if (!isDestroyed() && isAttackReady()){
 			if (attack()) resetAttackCooldown();
 		}
 		tickAttackCooldown();
@@ -80,7 +80,7 @@ public class Tower extends Building{
 		case LASER:
 			break;
 		case ARROW_ALL:
-			for (Player player : getNearbyPlayers(8)){
+			for (Player player : getNearbyPlayers(10)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
@@ -90,11 +90,12 @@ public class Tower extends Building{
 					arrow.setVelocity(new Vector(0, -1.5D, 0));
 					arrow.spigot().setDamage(damage);
 					arrow.setCritical(true);
+					ProjectileReaim.registerReaim(arrow, player, 2);
 				}
 			}
 			break;
 		case DAMAGE_ALL:
-			for (Player player : getNearbyPlayers(8)){
+			for (Player player : getNearbyPlayers(10)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
@@ -104,7 +105,7 @@ public class Tower extends Building{
 			}
 			break;
 		case FIREBALL_ALL:
-			for (Player player : getNearbyPlayers(8)){
+			for (Player player : getNearbyPlayers(10)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
@@ -114,6 +115,7 @@ public class Tower extends Building{
 					fireball.setIsIncendiary(false);
 					fireball.setYield(0);
 					fireball.setVelocity(new Vector(0, -1.5D, 0));
+					ProjectileReaim.registerReaim(fireball, player, 2);
 				}
 			}
 			break;

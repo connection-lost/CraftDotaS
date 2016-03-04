@@ -11,6 +11,7 @@ import me.crafter.mc.craftdotas.action.GameFlow;
 import me.crafter.mc.craftdotas.listener.InventoryListener;
 import me.crafter.mc.craftdotas.listener.ModifyWorldListener;
 import me.crafter.mc.craftdotas.listener.PlayerChatFormatListener;
+import me.crafter.mc.craftdotas.listener.PlayerCommandChatRestrictListener;
 import me.crafter.mc.craftdotas.listener.PreventBlockChangeListener;
 import me.crafter.mc.craftdotas.listener.PvpDamageListener;
 import me.crafter.mc.craftdotas.listener.PvpDeathListener;
@@ -43,6 +44,7 @@ public class DotaCommand implements CommandExecutor {
 	    		// Register listeners
 	    		Bukkit.getServer().getPluginManager().registerEvents(new InventoryListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new ModifyWorldListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerCommandChatRestrictListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PreventBlockChangeListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDamageListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
@@ -75,6 +77,7 @@ public class DotaCommand implements CommandExecutor {
     			Building building = Building.getBuildings().get(key);
     			building.clearHologram();
     		}
+    		Game.removeAll();
     		Team.removeAll();
     		Building.removeAll();
     		GameFlow.removeAll();

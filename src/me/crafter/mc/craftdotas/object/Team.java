@@ -90,5 +90,10 @@ public class Team {
 	}
 	
 	public void setBounty(Bounty bounty_) {bounty = bounty_;}
+	
+	public static void removeAll(){
+		playerteams = new HashMap<Player, Team>();
+		teams = new HashMap<Integer, Team>();
+	}
 
 }

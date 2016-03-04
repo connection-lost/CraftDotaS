@@ -68,4 +68,8 @@ public class GameFlow {
 		gameflows = new HashMap<Integer, String[]>();
 	}
 	
+	public static void removeAll(){
+		gameflows = new HashMap<Integer, String[]>();
+	}
+	
 }

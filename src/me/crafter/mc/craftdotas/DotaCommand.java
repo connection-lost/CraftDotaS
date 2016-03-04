@@ -4,8 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.event.HandlerList;
 
 import me.crafter.mc.craftdotas.action.FileLoader;
+import me.crafter.mc.craftdotas.action.GameFlow;
 import me.crafter.mc.craftdotas.listener.InventoryListener;
 import me.crafter.mc.craftdotas.listener.ModifyWorldListener;
 import me.crafter.mc.craftdotas.listener.PlayerChatFormatListener;
@@ -14,6 +16,7 @@ import me.crafter.mc.craftdotas.listener.PvpDamageListener;
 import me.crafter.mc.craftdotas.listener.PvpDeathListener;
 import me.crafter.mc.craftdotas.listener.TowerDamageListener;
 import me.crafter.mc.craftdotas.object.Game;
+import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.object.building.Building;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
 import net.md_5.bungee.api.ChatColor;
@@ -37,18 +40,18 @@ public class DotaCommand implements CommandExecutor {
 				FileLoader.loadGame(CraftDotaS.plugin.getDataFolder(), args[1]);
 	    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "载入成功");
 	    		Game.ready();
+	    		// Register listeners
+	    		Bukkit.getServer().getPluginManager().registerEvents(new InventoryListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new ModifyWorldListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PreventBlockChangeListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDamageListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new TowerDamageListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerChatFormatListener(), CraftDotaS.plugin);
 			} catch (Exception e) {
 				e.printStackTrace();
 	    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RED + "载入失败");
 			}
-    		// TEMP it is not unregistered in any sort
-    		Bukkit.getServer().getPluginManager().registerEvents(new InventoryListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new ModifyWorldListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new PreventBlockChangeListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDamageListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new TowerDamageListener(), CraftDotaS.plugin);
-    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerChatFormatListener(), CraftDotaS.plugin);
     		break;
     	case "start":
     		if (Game.task == null){
@@ -68,11 +71,14 @@ public class DotaCommand implements CommandExecutor {
     		break;
     	case "end":
     		Game.end();
-    		// TEMP not working
     		for (int key : Building.getBuildings().keySet()){
     			Building building = Building.getBuildings().get(key);
     			building.clearHologram();
     		}
+    		Team.removeAll();
+    		Building.removeAll();
+    		GameFlow.removeAll();
+    		HandlerList.unregisterAll(CraftDotaS.plugin);
     		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "游戏关闭");
     		break;
     	case "tick":

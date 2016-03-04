@@ -19,7 +19,6 @@ public class ProjectileReaim implements Runnable{
 	@Override
 	public void run() {
 		if (target.isValid() && self.isValid() && !target.isDead() && !self.isOnGround()){
-			Bukkit.broadcastMessage("reaim");
 			double speed = self.getVelocity().length();
 			self.setVelocity(target.getEyeLocation().subtract(self.getLocation()).toVector().normalize().multiply(speed));
 		}

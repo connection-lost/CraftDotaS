@@ -157,5 +157,9 @@ public class Building {
 		Bukkit.broadcastMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RESET + getDisplayName() + ChatColor.RED + " ±ª¥›ªŸ¡À°£°£°£");
 		// TODO Handle animations and such
 	}
+	
+	public static void removeAll(){
+		buildings = new HashMap<Integer, Building>();
+	}
 
 }

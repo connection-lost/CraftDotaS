@@ -118,21 +118,17 @@ teams:
         BLUE: 250
         GREEN: 95
   starting_item:
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
   - ==: org.bukkit.inventory.ItemStack
-    type: STONE_SWORD
-    meta:
-      ==: ItemMeta
-      meta-type: UNSPECIFIC
-      display-name: §f石剑
-      Unbreakable: true
+    type: EMERALD
+    amount: 10
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
   - null
   - null
   - null
@@ -170,9 +166,9 @@ teams:
   spawn:
     ==: org.bukkit.Location
     world: rift
-    x: -96.0
+    x: 96.0
     y: 12.0
-    z: -96.0
+    z: 96.0
   starting_armor:
   - ==: org.bukkit.inventory.ItemStack
     type: AIR
@@ -199,21 +195,17 @@ teams:
         BLUE: 242
         GREEN: 250
   starting_item:
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
   - ==: org.bukkit.inventory.ItemStack
-    type: STONE_SWORD
-    meta:
-      ==: ItemMeta
-      meta-type: UNSPECIFIC
-      display-name: §f石剑
-      Unbreakable: true
+    type: EMERALD
+    amount: 10
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
   - null
   - null
   - null

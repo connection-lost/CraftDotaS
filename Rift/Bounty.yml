@@ -1,0 +1,163 @@
+bounties:
+- type: "buildingdestroy"
+  id: 111
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 112
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 121
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 122
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 131
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 132
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 141
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 142
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 211
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 212
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 221
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 222
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 231
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 232
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 241
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "buildingdestroy"
+  id: 242
+  score: 0
+  dropitemonground: false
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 5
+- type: "playerkill"
+  id: 1
+  score: 1
+  dropitemonground: true
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 3
+- type: "playerkill"
+  id: 2
+  score: 1
+  dropitemonground: true
+  scale: false
+  items:
+  - ==: org.bukkit.inventory.ItemStack
+    type: EMERALD
+    amount: 3

@@ -2,8 +2,8 @@ buildings:
 - id: 100
   type: "base"
   side: 1
-  health: 200
-  maxhealth: 200
+  health: 500
+  maxhealth: 500
   healthregen: 0
   displayname: "&d紫队基地水晶"
   locations:
@@ -15,7 +15,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -70.0
-    y: 24.0
+    y: 24.3
     z: -70.0
   holograms:
   - id: 1000
@@ -47,7 +47,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -88.0
-    y: 21.0
+    y: 13.1
     z: 35.0
   holograms:
   - id: 1110
@@ -82,7 +82,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -93.0
-    y: 24.0
+    y: 16.2
     z: -29.0
   holograms:
   - id: 1120
@@ -117,7 +117,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -29.0
-    y: 21.0
+    y: 13.1
     z: -15.0
   holograms:
   - id: 1210
@@ -152,7 +152,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -43.0
-    y: 24.0
+    y: 16.2
     z: -43.0
   holograms:
   - id: 1220
@@ -187,7 +187,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 20.0
-    y: 21.0
+    y: 13.1
     z: -79.0
   holograms:
   - id: 1310
@@ -222,7 +222,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -29.0
-    y: 24.0
+    y: 16.2
     z: -93.0
   holograms:
   - id: 1320
@@ -257,7 +257,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -75.0
-    y: 24.0
+    y: 16.2
     z: -57.0
   holograms:
   - id: 1410
@@ -292,7 +292,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -57.0
-    y: 24.0
+    y: 16.2
     z: -75.0
   holograms:
   - id: 1420
@@ -314,8 +314,8 @@ buildings:
 - id: 200
   type: "base"
   side: 2
-  health: 200
-  maxhealth: 200
+  health: 500
+  maxhealth: 500
   healthregen: 0
   displayname: "&9蓝队基地水晶"
   locations:
@@ -327,7 +327,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 70.0
-    y: 24.0
+    y: 24.3
     z: 70.0
   holograms:
   - id: 2000
@@ -359,7 +359,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 88.0
-    y: 21.0
+    y: 13.1
     z: -35.0
   holograms:
   - id: 2110
@@ -394,7 +394,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 93.0
-    y: 24.0
+    y: 16.2
     z: 29.0
   holograms:
   - id: 2120
@@ -429,7 +429,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 29.0
-    y: 21.0
+    y: 13.1
     z: 15.0
   holograms:
   - id: 2210
@@ -464,7 +464,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 43.0
-    y: 24.0
+    y: 16.2
     z: 43.0
   holograms:
   - id: 2220
@@ -499,7 +499,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: -20.0
-    y: 21.0
+    y: 13.1
     z: 79.0
   holograms:
   - id: 2310
@@ -534,7 +534,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 29.0
-    y: 24.0
+    y: 16.2
     z: 93.0
   holograms:
   - id: 2320
@@ -569,7 +569,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 75.0
-    y: 24.0
+    y: 16.2
     z: 57.0
   holograms:
   - id: 2410
@@ -604,7 +604,7 @@ buildings:
   - ==: org.bukkit.Location
     world: rift
     x: 57.0
-    y: 24.0
+    y: 16.2
     z: 75.0
   holograms:
   - id: 2420

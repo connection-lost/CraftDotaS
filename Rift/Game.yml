@@ -1,0 +1,38 @@
+world: rift
+towinscore: 9999999
+start: -1800
+end: 60000
+flow:
+- tick: -1800
+  action: "SYSTEM_ANNOUNCE"
+  content: "&a[CraftDotaS] &b游戏准备就绪，即将传送。。。"
+- tick: -1701
+  action: "BATTLEFIELD_GATE_CLOSE"
+  content: ""
+- tick: -1700
+  action: "BATTLEFIELD_PLAYER_READY"
+  content: ""
+- tick: -1500
+  action: "BATTLEFIELD_GATE_OPEN"
+  content: ""
+- tick: -1220
+  action: "SYSTEM_ANNOUNCE"
+  content: "&a[CraftDotaS] &b欢迎来到&m奶子洞&r&b召唤师峡谷！"
+- tick: -620
+  action: "SYSTEM_ANNOUNCE"
+  content: "&a[CraftDotaS] &b敌方还有30秒到达战场，碾碎他们！"
+- tick: 19
+  action: "SYSTEM_PLAYSOUND"
+  content: "mob.wither.spawn"
+- tick: 20
+  action: "SYSTEM_ANNOUNCE"
+  content: "&a[CraftDotaS] &b全军出击！"
+- tick: 53999
+  action: "SYSTEM_END"
+  content: ""
+- tick: 54000
+  action: "SYSTEM_ANNOUNCE"
+  content: "&a[CraftDotaS] &b天啦噜，结束啦！"
+- tick: 55200
+  action: "SYSTEM_STOP"
+  content: ""

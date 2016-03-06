@@ -16,7 +16,7 @@ public class PlayerChatFormatListener implements Listener{
 		Player player = event.getPlayer();
 		if (player.getWorld() == Game.getWorld()){
 			Team team = Team.getPlayerTeam(player);
-			event.setFormat(team.getPrefix() + "%s" + team.getSuffix() + ": %s");
+			event.setFormat(team.getChatPrefix() + "%s" + team.getChatSuffix() + ": %s");
 		}
 	}
 	

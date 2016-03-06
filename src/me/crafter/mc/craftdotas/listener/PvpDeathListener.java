@@ -1,10 +1,14 @@
 package me.crafter.mc.craftdotas.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
+
+import me.crafter.mc.craftdotas.CraftDotaS;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
@@ -29,6 +33,19 @@ public class PvpDeathListener implements Listener {
 					}
 				}
 			}
+		}
+	}
+	
+	@EventHandler
+	public void onPlayerRespawn(final PlayerRespawnEvent event){
+		final Player player = event.getPlayer();
+		if (player.getWorld() == Game.getWorld()){
+			Bukkit.getScheduler().runTaskLater(CraftDotaS.plugin, new Runnable(){
+				@Override
+				public void run() {
+					player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
+				}
+			}, 1L);
 		}
 	}
 	

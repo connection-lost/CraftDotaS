@@ -3,8 +3,8 @@ package me.crafter.mc.craftdotas.object;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -15,8 +15,6 @@ public class Bounty {
 	private boolean dropitemonground = true;
 	private boolean scale = false;
 
-	private Bounty(){};
-	
 	public Bounty(int score_, List<ItemStack> items_, boolean dropitemonground_, boolean scale_){
 		score = score_;
 		items = items_;
@@ -53,11 +51,7 @@ public class Bounty {
 		scale = scale_;
 		return this;
 	}
-	
-	public static Bounty start(){
-		return new Bounty();
-	}
-	
+
 	public void award(Player receiver, Location awardlocation){
 		Team team = Team.getPlayerTeam(receiver);
 		// Score
@@ -81,8 +75,11 @@ public class Bounty {
 			if (isDropItemOnGround()){
 				Game.getWorld().dropItemNaturally(awardlocation, itemstack);
 			} else {
-				for (Player player : Team.getMembersByTeam(receiver)){
-					player.getInventory().addItem(itemstack);
+				for (String playername : Team.getMembersByTeam(receiver)){
+					Player player = Bukkit.getPlayerExact(playername);
+					if (player != null && player.isOnline()){
+						player.getInventory().addItem(itemstack);
+					}
 				}
 			}
 		}

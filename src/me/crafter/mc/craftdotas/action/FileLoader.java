@@ -9,7 +9,6 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import me.crafter.mc.craftdotas.object.Bounty;
@@ -143,14 +142,15 @@ public class FileLoader {
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
 				itemstacks = (List<ItemStack>) bounty.get("items");
-				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).withItems(itemstacks));
+				Building.getBuildings().get(id).setKillBounty(new Bounty(score, itemstacks, false, false));
+				Bukkit.getLogger().info("[CraftDotaS] Bounty " + Building.getBuildings().get(id).getDisplayName() + itemstacks.toString());
 				break;
 			case "buildingdamage":
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
 				itemstacks = (List<ItemStack>) bounty.get("items");
 				scale = (boolean) bounty.get("scale");
-				Building.getBuildings().get(id).setKillBounty(Bounty.start().withScore(score).dropItemOnGround(false).scale(scale).withItems(itemstacks));
+				Building.getBuildings().get(id).setKillBounty(new Bounty(score, itemstacks, false, false));
 				break;
 			case "playerkill":
 				id = (int) bounty.get("id");
@@ -158,7 +158,8 @@ public class FileLoader {
 				itemstacks = (List<ItemStack>) bounty.get("items");
 				scale = (boolean) bounty.get("scale");
 				dropitemonground = (boolean) bounty.get("dropitemonground");
-				Team.getTeam(id).setBounty(Bounty.start().withScore(score).dropItemOnGround(dropitemonground).scale(scale).withItems(itemstacks));
+				Team.getTeam(id).setBounty(new Bounty(score, itemstacks, dropitemonground, scale));
+				Bukkit.getLogger().info("[CraftDotaS] Bounty " + Team.getTeam(id).getDisplayName() + itemstacks.toString());
 				break;
 			}
 		}

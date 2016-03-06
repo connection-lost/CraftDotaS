@@ -31,6 +31,11 @@ public class GameFlow {
 				String message = ChatColor.translateAlternateColorCodes('&', flow[1]);
 				Bukkit.broadcastMessage(message);
 				break;
+			case "SYSTEM_PLAYSOUND": // Say message
+				for (Player player : Game.getWorld().getPlayers()){
+					player.playSound(player.getLocation(), flow[1], 0.5F, 1F);
+				}
+				break;
 			case "SYSTEM_COMMAND": // Run command
 				String command = flow[1];
 				if (command.startsWith("/")){

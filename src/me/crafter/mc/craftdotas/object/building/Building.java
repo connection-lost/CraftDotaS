@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import me.crafter.mc.craftdotas.object.Bounty;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.SingleHologram;
+import me.crafter.mc.craftdotas.task.BuildingDestroyAnimation;
 import net.md_5.bungee.api.ChatColor;
 
 public class Building {
@@ -32,6 +33,8 @@ public class Building {
 	private String displayname;
 	// Building min & max locations
 	private Location[] locations;
+	// Building center
+	private Location locationmid;
 	// Whether building is currently invulnerable
 	private boolean invulnerable;
 	// What building will become attackable if this building falls
@@ -45,6 +48,8 @@ public class Building {
 	private List<SingleHologram> holograms = new ArrayList<SingleHologram>();
 	// Center XZ
 	private double[] centerxz;
+	
+	private Player lastdamager;
 
 	public Building(int side_, int id_, double health_, double maxhealth_, double healthregen_, boolean destroyed_, 
 			String displayname_, Location[] locations_, boolean invulnerable_, int[] unlocks_, int damagescore_, int destroyscore_){
@@ -62,6 +67,7 @@ public class Building {
 		centerxz = new double[2];
 		centerxz[0] = (locations[0].getX() + locations[1].getX()) / 2;
 		centerxz[1] = (locations[0].getZ() + locations[1].getZ()) / 2;
+		locationmid = new Location(locations[0].getWorld(), centerxz[0] + 0.5, (locations[0].getY() + locations[1].getY()) / 2, centerxz[1] + 0.5);
 	}
 		
 	public int getSide() {return side;}
@@ -72,11 +78,13 @@ public class Building {
 	public boolean isDestroyed() {return destroyed;}
 	public String getDisplayName() {return displayname;}
 	public Location[] getLocations() {return locations;}
+	public Location getLocationMid() {return locationmid;}
 	public boolean isInvulnerable() {return invulnerable;}
 	public int[] getUnlocks() {return unlocks;}
 	public static Map<Integer, Building> getBuildings() {return buildings;}
 	public Bounty getDamageBounty() {return damagebounty;}
 	public Bounty getKillBounty() {return killbounty;}
+	public Player getLastDamager() {return lastdamager;}
 	
 	public List<Player> getNearbyPlayers(double distance) {
 		List<Player> nearby = new ArrayList<Player>();
@@ -97,6 +105,7 @@ public class Building {
 	public void setInvulnerable(boolean newinvulnerable) {invulnerable = newinvulnerable;}
 	public void setDamageBounty(Bounty bounty) {damagebounty = bounty;}
 	public void setKillBounty(Bounty bounty) {killbounty = bounty;}
+	public void setLastDamager(Player player) {lastdamager = player;}
 	
 	public static void tickAll(){
 		for (int bid : buildings.keySet()){
@@ -155,7 +164,10 @@ public class Building {
 		}
 		updateHologram();
 		Bukkit.broadcastMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RESET + getDisplayName() + ChatColor.RED + " ±ª¥›ªŸ¡À°£°£°£");
-		// TODO Handle animations and such
+		BuildingDestroyAnimation.play(this);
+		if (getKillBounty() != null){
+			getKillBounty().award(getLastDamager(), getLastDamager().getLocation());
+		}
 	}
 	
 	public static void removeAll(){

@@ -22,7 +22,7 @@ public class Team {
 	private ItemStack[] startingarmor;
 	private ItemStack[] startingitem;
 	
-	private static Map<Player, Team> playerteams = new HashMap<Player, Team>();
+	private static Map<String, Team> playerteams = new HashMap<String, Team>();
 	private static Map<Integer, Team> teams = new HashMap<Integer, Team>();
 	
 	public Team(int id_, String displayname_, String prefix_, String suffix_, String chatprefix_, String chatsuffix_, Location spawnlocation_){
@@ -63,29 +63,29 @@ public class Team {
 	}
 	
 	public static Team getPlayerTeam(Player player) {
-		Team team = playerteams.get(player);
+		Team team = playerteams.get(player.getName());
 		if (team == null){
-			playerteams.put(player, teams.get(-1));
+			playerteams.put(player.getName(), teams.get(-1));
 			return teams.get(-1);
 		}
 		return team;
 	}
 	
-	public static List<Player> getMembersByTeamId(int teamid){
-		List<Player> members = new ArrayList<Player>();
-		for (Player player : playerteams.keySet()){
-			if (playerteams.get(player).getId() == teamid) {
-				members.add(player);
+	public static List<String> getMembersByTeamId(int teamid){
+		List<String> members = new ArrayList<String>();
+		for (String playername : playerteams.keySet()){
+			if (playerteams.get(playername).getId() == teamid) {
+				members.add(playername);
 			}
 		}
 		return members;
 	}
 	
-	public static List<Player> getMembersByTeam(Team team){
-		List<Player> members = new ArrayList<Player>();
-		for (Player player : playerteams.keySet()){
-			if (playerteams.get(player) == team) {
-				members.add(player);
+	public static List<String> getMembersByTeam(Team team){
+		List<String> members = new ArrayList<String>();
+		for (String playername : playerteams.keySet()){
+			if (playerteams.get(playername) == team) {
+				members.add(playername);
 			}
 		}
 		return members;
@@ -100,7 +100,7 @@ public class Team {
 	}
 	
 	public void addPlayer(Player player){
-		playerteams.put(player, this);
+		playerteams.put(player.getName(), this);
 		player.getInventory().setArmorContents(startingarmor);
 		player.getInventory().setContents(startingitem);
 	}
@@ -108,7 +108,7 @@ public class Team {
 	public void setBounty(Bounty bounty_) {bounty = bounty_;}
 	
 	public static void removeAll(){
-		playerteams = new HashMap<Player, Team>();
+		playerteams = new HashMap<String, Team>();
 		teams = new HashMap<Integer, Team>();
 	}
 

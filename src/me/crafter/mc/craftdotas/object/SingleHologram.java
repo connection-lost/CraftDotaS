@@ -82,7 +82,7 @@ public class SingleHologram {
 		return line;
 	}
 	
-	public String getBarHealth(Building building, int length){
+	public static String getBarHealth(Building building, int length){
 		double hp = building.getHealth();
 		double hpmax = building.getMaxHealth();
 		String ret = "";

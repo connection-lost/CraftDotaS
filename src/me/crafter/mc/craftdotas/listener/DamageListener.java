@@ -4,12 +4,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
 
-public class PvpDamageListener implements Listener {
+public class DamageListener implements Listener {
 	
 	// Cancel friendly fire
 	@EventHandler
@@ -23,6 +26,16 @@ public class PvpDamageListener implements Listener {
 					event.setCancelled(true);
 				}
 			}
+		}
+	}
+	
+	@EventHandler
+	public void onPlayerDamageFood(EntityDamageEvent event){
+		if (event.getEntity() instanceof Player && event.getEntity().getWorld() == Game.getWorld()){
+			Player player = (Player) event.getEntity();
+			player.setFoodLevel(Math.max(player.getFoodLevel() - (int)event.getDamage()/2, 2));
+			player.removePotionEffect(PotionEffectType.HUNGER);
+			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 100, 0, true, false));
 		}
 	}
 

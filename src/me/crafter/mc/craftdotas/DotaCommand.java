@@ -8,14 +8,7 @@ import org.bukkit.event.HandlerList;
 
 import me.crafter.mc.craftdotas.action.FileLoader;
 import me.crafter.mc.craftdotas.action.GameFlow;
-import me.crafter.mc.craftdotas.listener.InventoryListener;
-import me.crafter.mc.craftdotas.listener.ModifyWorldListener;
-import me.crafter.mc.craftdotas.listener.PlayerChatFormatListener;
-import me.crafter.mc.craftdotas.listener.PlayerCommandChatRestrictListener;
-import me.crafter.mc.craftdotas.listener.PreventBlockChangeListener;
-import me.crafter.mc.craftdotas.listener.PvpDamageListener;
-import me.crafter.mc.craftdotas.listener.PvpDeathListener;
-import me.crafter.mc.craftdotas.listener.TowerDamageListener;
+import me.crafter.mc.craftdotas.listener.*;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.object.building.Building;
@@ -46,7 +39,7 @@ public class DotaCommand implements CommandExecutor {
 	    		Bukkit.getServer().getPluginManager().registerEvents(new ModifyWorldListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerCommandChatRestrictListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PreventBlockChangeListener(), CraftDotaS.plugin);
-	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDamageListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new DamageListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new TowerDamageListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerChatFormatListener(), CraftDotaS.plugin);

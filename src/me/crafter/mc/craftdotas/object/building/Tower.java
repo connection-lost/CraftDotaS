@@ -110,8 +110,8 @@ public class Tower extends Building{
 					attacked = true;
 					Location playerlocation = player.getLocation();
 					playerlocation.getWorld().playSound(playerlocation, Sound.GHAST_FIREBALL, 0.4F, 1F);
-					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 4D, 0D), Effect.FLAME, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
-					LargeFireball fireball = playerlocation.getWorld().spawn(playerlocation.add(0D, 4D, 0D), LargeFireball.class);
+					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 3D, 0D), Effect.FLAME, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
+					LargeFireball fireball = playerlocation.getWorld().spawn(playerlocation.add(0D, 3D, 0D), LargeFireball.class);
 					fireball.setIsIncendiary(false);
 					fireball.setYield(0);
 					fireball.setVelocity(new Vector(0, -1.5D, 0));

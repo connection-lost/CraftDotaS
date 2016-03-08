@@ -29,14 +29,15 @@ public class DamageListener implements Listener {
 		}
 	}
 	
+	// Custom code for Rev-Craft
 	@EventHandler
 	public void onPlayerDamageFood(EntityDamageEvent event){
 		if (event.getEntity() instanceof Player && event.getEntity().getWorld() == Game.getWorld()){
 			Player player = (Player) event.getEntity();
-			player.setFoodLevel(Math.max(player.getFoodLevel() - (int)event.getDamage()/2, 2));
+			player.setFoodLevel(Math.max(player.getFoodLevel() - (int)event.getFinalDamage()/2, 2));
 			player.removePotionEffect(PotionEffectType.HUNGER);
 			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 100, 0, true, false));
 		}
 	}
-
+	// End custom code for Rev-Craft
 }

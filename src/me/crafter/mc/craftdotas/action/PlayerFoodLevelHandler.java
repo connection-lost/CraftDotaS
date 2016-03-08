@@ -7,6 +7,7 @@ import me.crafter.mc.craftdotas.object.Game;
 
 public class PlayerFoodLevelHandler {
 
+	// Custom code for Rev-Craft
 	private static int tick = 0;
 	
 	public static void handleSprint(){
@@ -30,5 +31,6 @@ public class PlayerFoodLevelHandler {
 		}
 		tick ++;
 	}
+	// End custom code for Rev-Craft
 	
 }

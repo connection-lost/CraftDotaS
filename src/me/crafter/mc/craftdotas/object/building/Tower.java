@@ -87,9 +87,9 @@ public class Tower extends Building{
 					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 4D, 0D), Effect.CRIT, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
 					Arrow arrow = playerlocation.getWorld().spawn(playerlocation.add(0D, 4D, 0D), Arrow.class);
 					arrow.setVelocity(new Vector(0, -1.5D, 0));
-					arrow.spigot().setDamage(damage);
 					arrow.setCritical(true);
 					ProjectileReaim.registerReaim(arrow, player, 2);
+					arrow.spigot().setDamage(damage);
 				}
 			}
 			break;

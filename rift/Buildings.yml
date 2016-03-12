@@ -63,9 +63,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [112]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 112
   type: "tower"
   side: 1
@@ -98,9 +98,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 121
   type: "tower"
   side: 1
@@ -133,9 +133,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [122]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 122
   type: "tower"
   side: 1
@@ -168,9 +168,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 131
   type: "tower"
   side: 1
@@ -203,9 +203,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [132]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 132
   type: "tower"
   side: 1
@@ -238,9 +238,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [141, 142]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 141
   type: "tower"
   side: 1
@@ -273,9 +273,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [100]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 142
   type: "tower"
   side: 1
@@ -308,9 +308,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [100]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 200
   type: "base"
   side: 2
@@ -375,9 +375,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [212]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 212
   type: "tower"
   side: 2
@@ -410,9 +410,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 221
   type: "tower"
   side: 2
@@ -445,9 +445,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [222]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 222
   type: "tower"
   side: 2
@@ -480,9 +480,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 231
   type: "tower"
   side: 2
@@ -515,9 +515,9 @@ buildings:
     - "%bar20%"
   invulnerable: false
   unlocks: [232]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 232
   type: "tower"
   side: 2
@@ -550,9 +550,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [241, 242]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 241
   type: "tower"
   side: 2
@@ -585,9 +585,9 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [200]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50
 - id: 242
   type: "tower"
   side: 2
@@ -620,6 +620,6 @@ buildings:
     - "%bar20%"
   invulnerable: true
   unlocks: [200]
-  attackmove: "FIREBALL_ALL"
-  damage: 4.0
-  attackspeed: 100
+  attackmove: "ARROW_ALL"
+  damage: 1.5
+  attackspeed: 50

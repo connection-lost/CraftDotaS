@@ -27,12 +27,3 @@ flow:
 - tick: 20
   action: "SYSTEM_ANNOUNCE"
   content: "&a[CraftDotaS] &b全军出击！"
-- tick: 53999
-  action: "SYSTEM_END"
-  content: ""
-- tick: 54000
-  action: "SYSTEM_ANNOUNCE"
-  content: "&a[CraftDotaS] &b天啦噜，结束啦！"
-- tick: 55200
-  action: "SYSTEM_STOP"
-  content: ""

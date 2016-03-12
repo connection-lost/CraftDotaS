@@ -151,7 +151,7 @@ bounties:
   items:
   - ==: org.bukkit.inventory.ItemStack
     type: EMERALD
-    amount: 3
+    amount: 4
 - type: "playerkill"
   id: 2
   score: 1
@@ -160,4 +160,4 @@ bounties:
   items:
   - ==: org.bukkit.inventory.ItemStack
     type: EMERALD
-    amount: 3
+    amount: 4

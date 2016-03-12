@@ -7,11 +7,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import me.crafter.mc.craftdotas.CraftDotaS;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
 import me.crafter.mc.craftdotas.utils.PlayerUtils;
+import net.md_5.bungee.api.ChatColor;
 
 public class PvpDeathListener implements Listener {
 
@@ -44,6 +47,12 @@ public class PvpDeathListener implements Listener {
 				@Override
 				public void run() {
 					player.teleport(Team.getPlayerTeam(player).getSpawnLocation());
+					// Custom code for Rev-Craft
+					player.setFoodLevel(0);
+					int punishtime = Math.max(20, Game.getTick()/60);
+					player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, punishtime, 128));
+					player.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.GREEN + "重新回到场地时间: " + ChatColor.RED + (punishtime/20 + 1) + ChatColor.GREEN + " 秒。");
+					// End custom code for Rev-Craft
 				}
 			}, 1L);
 		}

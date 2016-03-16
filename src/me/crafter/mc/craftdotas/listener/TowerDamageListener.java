@@ -37,8 +37,7 @@ public class TowerDamageListener implements Listener {
 		}
 		
 		if (block.getWorld() == Game.getWorld() && !(player.getGameMode() == GameMode.CREATIVE) && Game.getTick() > 0){
-			for (int id : Building.getBuildings().keySet()){
-				Building building = Building.getBuildings().get(id);
+			for (Building building : Building.getBuildings()){
 				Location locationmin = building.getLocations()[0];
 				Location locationmax = building.getLocations()[1];
 				Location location = block.getLocation();

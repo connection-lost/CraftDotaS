@@ -66,8 +66,7 @@ public class DotaCommand implements CommandExecutor {
     		break;
     	case "end":
     		Game.end();
-    		for (int key : Building.getBuildings().keySet()){
-    			Building building = Building.getBuildings().get(key);
+    		for (Building building : Building.getBuildings()){
     			building.clearHologram();
     		}
     		Game.removeAll();

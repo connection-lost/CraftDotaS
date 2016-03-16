@@ -1,6 +1,7 @@
 package me.crafter.mc.craftdotas.object.building;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -81,7 +82,8 @@ public class Building {
 	public Location getLocationMid() {return locationmid;}
 	public boolean isInvulnerable() {return invulnerable;}
 	public int[] getUnlocks() {return unlocks;}
-	public static Map<Integer, Building> getBuildings() {return buildings;}
+	public static Collection<Building> getBuildings() {return buildings.values();}
+	public static Building getBuildingById(int id) {return buildings.get(id);}
 	public Bounty getDamageBounty() {return damagebounty;}
 	public Bounty getKillBounty() {return killbounty;}
 	public Player getLastDamager() {return lastdamager;}

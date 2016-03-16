@@ -79,13 +79,13 @@ public class Tower extends Building{
 		case LASER:
 			break;
 		case ARROW_ALL:
-			for (Player player : getNearbyPlayers(10)){
+			for (Player player : getNearbyPlayers(14)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
 					playerlocation.getWorld().playSound(playerlocation, Sound.SHOOT_ARROW, 0.4F, 1F);
 					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 4D, 0D), Effect.CRIT, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
-					Arrow arrow = playerlocation.getWorld().spawn(playerlocation.add(0D, 4D, 0D), Arrow.class);
+					Arrow arrow = playerlocation.getWorld().spawn(playerlocation.add(0D, 2.5D, 0D), Arrow.class);
 					arrow.setVelocity(new Vector(0, -1.5D, 0));
 					arrow.setCritical(true);
 					ProjectileReaim.registerReaim(arrow, player, 2);
@@ -94,7 +94,7 @@ public class Tower extends Building{
 			}
 			break;
 		case DAMAGE_ALL:
-			for (Player player : getNearbyPlayers(10)){
+			for (Player player : getNearbyPlayers(14)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
@@ -104,7 +104,7 @@ public class Tower extends Building{
 			}
 			break;
 		case FIREBALL_ALL:
-			for (Player player : getNearbyPlayers(10)){
+			for (Player player : getNearbyPlayers(14)){
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();

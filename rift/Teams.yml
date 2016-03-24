@@ -112,6 +112,7 @@ teams:
       meta-type: LEATHER_ARMOR
       display-name: §d紫队帽子
       Unbreakable: true
+      internal: H4sIAAAAAAAAAONiYOBkEHIsKSnKTCotSfXNT8lMy0wtKuZiYGBgZGHgCA31dPHNLy6x/5Hrcu+oaxkLAydIyCc1sbhkluHHTwdizI6wMbA55uaX5pU4mDCAAQcDL9xEv8TcVAbB9NS81KLMZL3cxAqP1MSckgxmBk7/gtSixJLM/DyIFhawSi5fx4h4D1dHnxAPBgYAvPt+Dp0AAAA=
       color:
         ==: Color
         RED: 237
@@ -189,6 +190,7 @@ teams:
       meta-type: LEATHER_ARMOR
       display-name: §9蓝队帽子
       Unbreakable: true
+      internal: H4sIAAAAAAAAAONiYOBkEHIsKSnKTCotSfXNT8lMy0wtKuZiYGBgZGHgCA31dPHNLy6x/5Hrcu+oaxkLAydIyCc1sbhkluHHTwdizI6wMbA55uaX5pU4mDCAAQcDL9xEv8TcVAbB9NS81KLMZL3cxAqP1MSckgxmBk7/gtSixJLM/DyIFhawSi5fx4h4D1dHnxAPBgYAvPt+Dp0AAAA=
       color:
         ==: Color
         RED: 94

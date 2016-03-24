@@ -2,8 +2,8 @@ buildings:
 - id: 100
   type: "base"
   side: 1
-  health: 500
-  maxhealth: 500
+  health: 200
+  maxhealth: 200
   healthregen: 0
   displayname: "&d紫队基地水晶"
   locations:
@@ -64,7 +64,7 @@ buildings:
   invulnerable: false
   unlocks: [112]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 112
   type: "tower"
@@ -99,7 +99,7 @@ buildings:
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 121
   type: "tower"
@@ -134,7 +134,7 @@ buildings:
   invulnerable: false
   unlocks: [122]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 122
   type: "tower"
@@ -169,7 +169,7 @@ buildings:
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 131
   type: "tower"
@@ -204,7 +204,7 @@ buildings:
   invulnerable: false
   unlocks: [132]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 132
   type: "tower"
@@ -239,7 +239,7 @@ buildings:
   invulnerable: true
   unlocks: [141, 142]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 141
   type: "tower"
@@ -274,7 +274,7 @@ buildings:
   invulnerable: true
   unlocks: [100]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 142
   type: "tower"
@@ -309,13 +309,13 @@ buildings:
   invulnerable: true
   unlocks: [100]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 200
   type: "base"
   side: 2
-  health: 500
-  maxhealth: 500
+  health: 200
+  maxhealth: 200
   healthregen: 0
   displayname: "&9蓝队基地水晶"
   locations:
@@ -376,7 +376,7 @@ buildings:
   invulnerable: false
   unlocks: [212]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 212
   type: "tower"
@@ -411,7 +411,7 @@ buildings:
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 221
   type: "tower"
@@ -446,7 +446,7 @@ buildings:
   invulnerable: false
   unlocks: [222]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 222
   type: "tower"
@@ -481,7 +481,7 @@ buildings:
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 231
   type: "tower"
@@ -516,7 +516,7 @@ buildings:
   invulnerable: false
   unlocks: [232]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 232
   type: "tower"
@@ -551,7 +551,7 @@ buildings:
   invulnerable: true
   unlocks: [241, 242]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 241
   type: "tower"
@@ -586,7 +586,7 @@ buildings:
   invulnerable: true
   unlocks: [200]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50
 - id: 242
   type: "tower"
@@ -621,5 +621,5 @@ buildings:
   invulnerable: true
   unlocks: [200]
   attackmove: "ARROW_ALL"
-  damage: 1.5
+  damage: 2.5
   attackspeed: 50

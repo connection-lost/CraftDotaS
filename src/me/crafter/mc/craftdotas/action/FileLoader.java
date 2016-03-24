@@ -142,15 +142,15 @@ public class FileLoader {
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
 				itemstacks = (List<ItemStack>) bounty.get("items");
-				Building.getBuildings().get(id).setKillBounty(new Bounty(score, itemstacks, false, false));
-				Bukkit.getLogger().info("[CraftDotaS] Bounty " + Building.getBuildings().get(id).getDisplayName() + itemstacks.toString());
+				Building.getBuildingById(id).setKillBounty(new Bounty(score, itemstacks, false, false));
+				Bukkit.getLogger().info("[CraftDotaS] Bounty " + Building.getBuildingById(id).getDisplayName() + itemstacks.toString());
 				break;
 			case "buildingdamage":
 				id = (int) bounty.get("id");
 				score = (int) bounty.get("score");
 				itemstacks = (List<ItemStack>) bounty.get("items");
 				scale = (boolean) bounty.get("scale");
-				Building.getBuildings().get(id).setKillBounty(new Bounty(score, itemstacks, false, false));
+				Building.getBuildingById(id).setKillBounty(new Bounty(score, itemstacks, false, false));
 				break;
 			case "playerkill":
 				id = (int) bounty.get("id");
@@ -167,8 +167,15 @@ public class FileLoader {
 		Bukkit.getLogger().info("[CraftDotaS] Loading Hud.yml...");
 		FileConfiguration hud = YamlConfiguration.loadConfiguration(new File(folder, "Hud.yml"));
 		String actionbar = ChatColor.translateAlternateColorCodes('&', hud.getString("action_bar"));
-		new HudAction(actionbar);
+		String scoreboardtitle = ChatColor.translateAlternateColorCodes('&', hud.getString("scoreboard_title"));
+		List<String> scoreboardlines = hud.getStringList("scoreboard_lines");
+		new HudAction(actionbar, scoreboardtitle, scoreboardlines);
 		Bukkit.getLogger().info("[CraftDotaS] ActionBar: " + actionbar);
+		Bukkit.getLogger().info("[CraftDotaS] ScoreboardTitle: " + scoreboardtitle);
+		Bukkit.getLogger().info("[CraftDotaS] ScoreboardLines: ");
+		for (String line : scoreboardlines){
+			Bukkit.getLogger().info("[CraftDotaS] - " + line);
+		}
 		// test
 //		FileConfiguration itemtest = new YamlConfiguration();
 //		for (Player p : Bukkit.getOnlinePlayers()){

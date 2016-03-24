@@ -1,1 +1,10 @@
 action_bar: "{teamprefix1}{teamdisplayname1} {teamscore1}&a - &e[{time}] &a- {teamprefix2}{teamscore2} {teamdisplayname2}"
+scoreboard_title: "{teamprefix1}{teamscore1}&r &e[{time}]&r {teamprefix2}{teamscore2}"
+scoreboard_lines:
+- "§1§d▇{buildingonechar142}▇§7▇{buildingonechar132}▇§7▇{buildingonechar131}▇§7▇"
+- "§2§7{buildingonechar141}▇{buildingonechar122}▇§7▇▇▇▇{buildingonechar211}▇"
+- "§3§7▇▇{buildingonechar121}▇§7▇▇▇▇"
+- "§4§7{buildingonechar112}▇§7▇▇▇▇▇{buildingonechar212}▇"
+- "§5§7▇▇▇▇{buildingonechar221}▇§7▇▇"
+- "§6{buildingonechar111}▇§7▇▇▇▇{buildingonechar222}▇{buildingonechar241}▇"
+- "§7§7▇{buildingonechar231}▇§7▇{buildingonechar232}▇§7▇{buildingonechar242}▇§9▇"

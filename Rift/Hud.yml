@@ -1,5 +1,5 @@
-action_bar: "{teamprefix1}{teamdisplayname1} {teamscore1}&a - &e[{time}] &a- {teamprefix2}{teamscore2} {teamdisplayname2}"
-scoreboard_title: "{teamprefix1}{teamscore1}&r &e[{time}]&r {teamprefix2}{teamscore2}"
+action_bar: "{teamprefix1}{teamscore1}&r &e[{time}]&r {teamprefix2}{teamscore2}"
+scoreboard_title: "-"
 scoreboard_lines:
 - "§1§d▇{buildingonechar142}▇§7▇{buildingonechar132}▇§7▇{buildingonechar131}▇§7▇"
 - "§2§7{buildingonechar141}▇{buildingonechar122}▇§7▇▇▇▇{buildingonechar211}▇"

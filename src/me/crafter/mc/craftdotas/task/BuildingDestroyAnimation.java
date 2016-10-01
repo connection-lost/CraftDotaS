@@ -31,7 +31,7 @@ public class BuildingDestroyAnimation implements Runnable{
 		if (tick < 100){
 			Game.getWorld().spigot().playEffect(building.getLocationMid(), Effect.FLAME, 0, 0, 10F-tick/10F, 10F-tick/10F, 10F-tick/10F, 0.5F-tick/200F, 120-tick, 96);
 			if (tick < 80 && tick % 4 == 0){
-				Game.getWorld().playSound(building.getLocationMid(), Sound.AMBIENCE_CAVE, 3.5F, tick/60F + 0.5F);
+				Game.getWorld().playSound(building.getLocationMid(), Sound.AMBIENT_CAVE, 3.5F, tick/60F + 0.5F);
 			}
 		} else if (tick < 104){
 			Game.getWorld().strikeLightningEffect(building.getLocationMid());
@@ -40,12 +40,12 @@ public class BuildingDestroyAnimation implements Runnable{
 			Game.getWorld().spigot().playEffect(building.getLocationMid(), Effect.FLAME, 0, 0, tick/10F-10F, tick/10F-10F, tick/10F-10F, tick/200F-0.2F, tick - 80, 96);
 			if (random.nextInt(6) == 1){
 				Game.getWorld().spigot().playEffect(building.getLocationMid(), Effect.EXPLOSION_HUGE, 0, 0, 3F, 3F, 3F, 0, 2, 96);
-				Game.getWorld().playSound(building.getLocationMid(), Sound.EXPLODE, 3.5F, 0.6F + random.nextFloat()/2F);
+				Game.getWorld().playSound(building.getLocationMid(), Sound.ENTITY_GENERIC_EXPLODE, 3.5F, 0.6F + random.nextFloat()/2F);
 			}
 		} else if (tick < 600){
 			if (random.nextInt(6) == 1){
 				Game.getWorld().spigot().playEffect(building.getLocationMid(), Effect.EXPLOSION_HUGE, 0, 0, 3F, 3F, 3F, 0, 2, 96);
-				Game.getWorld().playSound(building.getLocationMid(), Sound.EXPLODE, 3.5F, 0.6F + random.nextFloat()/2F);
+				Game.getWorld().playSound(building.getLocationMid(), Sound.ENTITY_GENERIC_EXPLODE, 3.5F, 0.6F + random.nextFloat()/2F);
 			}
 			Game.getWorld().spigot().playEffect(building.getLocationMid(), Effect.FLAME, 0, 0, 4F, 6F, 4F, 0, 8, 96);
 		} else if (tick == 600) {

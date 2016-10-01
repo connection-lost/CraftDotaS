@@ -56,7 +56,7 @@ public class TowerDamageListener implements Listener {
 							location.getWorld().spigot().playEffect(location, Effect.MAGIC_CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 16, 16);
 							location.getWorld().spigot().playEffect(location, Effect.CRIT, 0, 0, 0.4F, 0.4F, 0.4F, 1F, 16, 16);
 							location.getWorld().spigot().playEffect(location, Effect.TILE_DUST, 0, 0, 0.8F, 0.8F, 0.8F, 0.65F, 16, 16);
-							location.getWorld().playSound(location, Sound.EXPLODE, 0.4F, 1.25F);
+							location.getWorld().playSound(location, Sound.ENTITY_GENERIC_EXPLODE, 0.4F, 1.25F);
 							TitleAPI.sendTitle(player, 2, 30, 10, " ", building.getDisplayName() + ChatColor.RESET + " " + (int)building.getHealth() + "/" + (int)building.getMaxHealth());
 							building.setLastDamager(player);
 						}

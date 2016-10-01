@@ -8,6 +8,7 @@ import org.bukkit.event.HandlerList;
 
 import me.crafter.mc.craftdotas.action.FileLoader;
 import me.crafter.mc.craftdotas.action.GameFlow;
+import me.crafter.mc.craftdotas.action.HudAction;
 import me.crafter.mc.craftdotas.listener.*;
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
@@ -43,6 +44,7 @@ public class DotaCommand implements CommandExecutor {
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PvpDeathListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new TowerDamageListener(), CraftDotaS.plugin);
 	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerChatFormatListener(), CraftDotaS.plugin);
+	    		Bukkit.getServer().getPluginManager().registerEvents(new PlayerTeleportBaseListener(), CraftDotaS.plugin);
 			} catch (Exception e) {
 				e.printStackTrace();
 	    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.RED + "‘ÿ»Î ß∞‹");
@@ -69,6 +71,7 @@ public class DotaCommand implements CommandExecutor {
     		for (Building building : Building.getBuildings()){
     			building.clearHologram();
     		}
+    		HudAction.removeAll();
     		Game.removeAll();
     		Team.removeAll();
     		Building.removeAll();

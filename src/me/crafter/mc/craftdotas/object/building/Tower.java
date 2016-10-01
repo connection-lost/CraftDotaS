@@ -83,9 +83,9 @@ public class Tower extends Building{
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
-					playerlocation.getWorld().playSound(playerlocation, Sound.SHOOT_ARROW, 0.4F, 1F);
+					playerlocation.getWorld().playSound(playerlocation, Sound.ENTITY_ARROW_SHOOT, 0.4F, 1F);
 					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 4D, 0D), Effect.CRIT, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
-					Arrow arrow = playerlocation.getWorld().spawn(playerlocation.add(0D, 2.5D, 0D), Arrow.class);
+					Arrow arrow = playerlocation.getWorld().spawn(playerlocation.add(0D, 1.9D, 0D), Arrow.class);
 					arrow.setVelocity(new Vector(0, -1.5D, 0));
 					arrow.setCritical(true);
 					ProjectileReaim.registerReaim(arrow, player, 2);
@@ -108,7 +108,7 @@ public class Tower extends Building{
 				if (Team.getPlayerTeam(player).getId() != getSide()){
 					attacked = true;
 					Location playerlocation = player.getLocation();
-					playerlocation.getWorld().playSound(playerlocation, Sound.GHAST_FIREBALL, 0.4F, 1F);
+					playerlocation.getWorld().playSound(playerlocation, Sound.ENTITY_GHAST_SHOOT, 0.4F, 1F);
 					playerlocation.getWorld().spigot().playEffect(playerlocation.add(0D, 3D, 0D), Effect.FLAME, 0, 0, 0.1F, 0.5F, 0.1F, 0.1F, 100, 32);
 					LargeFireball fireball = playerlocation.getWorld().spawn(playerlocation.add(0D, 3D, 0D), LargeFireball.class);
 					fireball.setIsIncendiary(false);

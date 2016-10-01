@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
-import com.connorlinfoot.actionbarapi.ActionBarAPI;
+//import com.connorlinfoot.actionbarapi.ActionBarAPI;
 
 import me.crafter.mc.craftdotas.object.Game;
 import me.crafter.mc.craftdotas.object.Team;
@@ -24,13 +27,16 @@ public class HudAction {
 	private static String scoreboardtitle = null;
 	private static List<String> scoreboardlines;
 	private static SingleScoreboard singlescoreboard = null;
-	
+	private static BossBar bossbar = null;
 	
 	public HudAction(String actionbar_, String scoreboardtitle_, List<String> scoreboardlines_){
 		actionbar = actionbar_;
 		scoreboardtitle = scoreboardtitle_;
 		scoreboardlines = scoreboardlines_;
+		if (actionbar.equals("")) actionbar = null;
+		if (scoreboardtitle.equals("")) scoreboardtitle = null;
 		if (scoreboardtitle != null) initScoreboard();
+		bossbar = Bukkit.createBossBar("CraftDotaS", BarColor.PURPLE, BarStyle.SOLID);
 	}
 
 	public static String getActionBar(){return actionbar;}
@@ -44,14 +50,22 @@ public class HudAction {
 	public static void setScoreboardLines(List<String> scoreboardlines_){scoreboardlines = scoreboardlines_;}
 	
 	public static void initScoreboard(){
-		singlescoreboard = ScoreboardManager.getNewScoreboard(getMessage(scoreboardtitle, Game.getTick()), getMessage(scoreboardlines, Game.getTick()));
+		singlescoreboard = ScoreboardManager.getNewScoreboard(ChatColor.GOLD + "CraftDotaS", getMessage(scoreboardlines, Game.getTick()));
 	}
 	
 	public static void execute(int tick){
 		if (hudtick % updatefrequency == 0){
 			if (actionbar != null){
-				for (Player player : Game.getWorld().getPlayers()){
-					ActionBarAPI.sendActionBar(player, getMessage(getActionBar(), tick));
+//				for (Player player : Game.getWorld().getPlayers()){
+//					ActionBarAPI.sendActionBar(player, getMessage(getActionBar(), tick));
+//				}
+				bossbar.setTitle(getMessage(getActionBar(), tick));
+				for (Player player : Bukkit.getOnlinePlayers()){
+					if (player.getWorld() == Game.getWorld()){
+						bossbar.addPlayer(player);
+					} else {
+						bossbar.removePlayer(player);
+					}
 				}
 			}
 			if (scoreboardtitle != null){
@@ -110,6 +124,10 @@ public class HudAction {
 		else if (percent > 0.4) return ChatColor.YELLOW + "";
 		else if (percent > 0.2) return ChatColor.RED + "";
 		else return ChatColor.DARK_RED + "";
+	}
+
+	public static void removeAll() {
+		if (scoreboardtitle != null) ScoreboardManager.removeScoreboard(ChatColor.GOLD + "CraftDotaS");
 	}
 	
 	

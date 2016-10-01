@@ -2,6 +2,7 @@ package me.crafter.mc.craftdotas.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
@@ -30,13 +31,14 @@ public class DamageListener implements Listener {
 	}
 	
 	// Custom code for Rev-Craft
-	@EventHandler
+	@EventHandler(priority = EventPriority.MONITOR)
 	public void onPlayerDamageFood(EntityDamageEvent event){
 		if (event.getEntity() instanceof Player && event.getEntity().getWorld() == Game.getWorld()){
+			if (event.isCancelled()) return;
 			Player player = (Player) event.getEntity();
-			player.setFoodLevel(Math.max(player.getFoodLevel() - (int)event.getFinalDamage()/2, 2));
+			player.setFoodLevel(Math.max(player.getFoodLevel() - (int)event.getFinalDamage()/4, 6));
 			player.removePotionEffect(PotionEffectType.HUNGER);
-			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 100, 0, true, false));
+			player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Math.min(120, ((int)event.getFinalDamage()) * 10), 0, true, false));
 		}
 	}
 	// End custom code for Rev-Craft

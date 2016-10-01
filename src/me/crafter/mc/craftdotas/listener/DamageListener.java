@@ -6,6 +6,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityRegainHealthEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -27,6 +28,14 @@ public class DamageListener implements Listener {
 					event.setCancelled(true);
 				}
 			}
+		}
+	}
+	
+	// Cancel fast regain health
+	@EventHandler
+	public void onPlayerRegainHealth(EntityRegainHealthEvent event){
+		if (event.getEntity() instanceof Player && event.getEntity().getWorld() == Game.getWorld()){
+			if (event.isFastRegen()) event.setCancelled(true);
 		}
 	}
 	

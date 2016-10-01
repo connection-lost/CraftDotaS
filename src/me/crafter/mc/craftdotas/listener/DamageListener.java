@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
+import org.bukkit.event.player.PlayerItemDamageEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -36,6 +37,14 @@ public class DamageListener implements Listener {
 	public void onPlayerRegainHealth(EntityRegainHealthEvent event){
 		if (event.getEntity() instanceof Player && event.getEntity().getWorld() == Game.getWorld()){
 			if (event.isFastRegen()) event.setCancelled(true);
+		}
+	}
+	
+	// Cancel all durability changes
+	@EventHandler
+	public void onItemDamage(PlayerItemDamageEvent event){
+		if (event.getPlayer() instanceof Player && event.getPlayer().getWorld() == Game.getWorld()){
+			event.setCancelled(true);
 		}
 	}
 	

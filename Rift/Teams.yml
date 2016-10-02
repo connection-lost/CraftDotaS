@@ -121,7 +121,7 @@ teams:
   starting_item:
   - ==: org.bukkit.inventory.ItemStack
     type: EMERALD
-    amount: 10
+    amount: 8
   - null
   - null
   - null
@@ -199,7 +199,7 @@ teams:
   starting_item:
   - ==: org.bukkit.inventory.ItemStack
     type: EMERALD
-    amount: 10
+    amount: 8
   - null
   - null
   - null

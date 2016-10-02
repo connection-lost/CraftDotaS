@@ -1,9 +1,9 @@
 world: rift
 towinscore: 9999999
-start: -1800
+start: -1780
 end: 60000
 flow:
-- tick: -1800
+- tick: -1779
   action: "SYSTEM_ANNOUNCE"
   content: "&a[CraftDotaS] &b游戏准备就绪，即将传送。。。"
 - tick: -1701

@@ -128,6 +128,7 @@ public class HudAction {
 
 	public static void removeAll() {
 		if (scoreboardtitle != null) ScoreboardManager.removeScoreboard(ChatColor.GOLD + "CraftDotaS");
+		if (actionbar != null) bossbar.removeAll();
 	}
 	
 	

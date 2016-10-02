@@ -4,7 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import me.crafter.mc.craftdotas.action.FileLoader;
 import me.crafter.mc.craftdotas.action.GameFlow;
@@ -100,6 +103,29 @@ public class DotaCommand implements CommandExecutor {
     			} catch (Exception ex){
     				showUsage(sender);
     			}
+    		}
+    		break;
+    	case "unbreakable":
+    		if (sender instanceof Player){
+    			Player player = (Player)sender;
+    			@SuppressWarnings("deprecation")
+				ItemStack item = player.getItemInHand();
+    			if (item != null){
+    				ItemMeta itemmeta = item.getItemMeta();
+    				if (itemmeta.spigot().isUnbreakable()){
+    					itemmeta.spigot().setUnbreakable(false);
+    					item.setItemMeta(itemmeta);
+    		    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.YELLOW + "取消物品耐久无限");
+    				} else {
+    					itemmeta.spigot().setUnbreakable(true);
+    					item.setItemMeta(itemmeta);
+    		    		sender.sendMessage(ChatColor.GOLD + "[CraftDotaS] " + ChatColor.YELLOW + "设置物品耐久无限");
+    				}
+    			} else {
+    				
+    			}
+    		} else {
+    			return false;
     		}
     		break;
     	default:

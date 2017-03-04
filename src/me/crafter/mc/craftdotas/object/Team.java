@@ -101,8 +101,8 @@ public class Team {
 	
 	public void addPlayer(Player player){
 		playerteams.put(player.getName(), this);
-		player.getInventory().setArmorContents(startingarmor);
 		player.getInventory().setContents(startingitem);
+		player.getInventory().setArmorContents(startingarmor);
 	}
 	
 	public void setBounty(Bounty bounty_) {bounty = bounty_;}
